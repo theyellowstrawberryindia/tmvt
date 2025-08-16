@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requirement Bar + Navbar</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    /* Requirement bar */
+    .requirement-bar {
+      background-color: #FAFAFA;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .requirement-text,
+    .inquire-text {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      color: #000;
+      margin: 0;
+    }
+
+    .arrow-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+      background-color: #FAFAFA;
+      height: 160px;
+      display: flex;
+      align-items: center;
+    }
+
+   .custom-navbar .nav-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  padding: 0;
+  margin-left: 50px; /* increased gap between links */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+   .custom-navbar .nav-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  padding: 0;
+  margin-left: 50px; /* more gap between links */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #DA2E2E;
+}
+
+.custom-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #DA2E2E;
+  transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 30px; /* wider dash when hovered */
+}
+
+    .navbar-logo {
+      height: 120px;
+      width: 218px;
+    }
+
+    /* Get a Quote button */
+    .quote-btn {
+      background-color: #DA2E2E;
+      color: #fff;
+      width: 176px;
+      height: 64px;
+      padding: 16px;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .quote-btn:hover {
+      background-color: #b32222;
+    }
+    /* Mobile responsive styles */
+@media (max-width: 768px) {
+  /* Requirement Bar */
+  .requirement-bar {
+    width: 440px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 0 10px;
+            padding-top: 20px;
+  }
+  .requirement-bar .container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+  .requirement-text,
+  .inquire-text {
+    font-size: 14px;
+  }
+  .arrow-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Navbar */
+  .custom-navbar {
+    width: 440px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+  .custom-navbar .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Replace logo with mobile version */
+  .navbar-logo {
+    content: url('assets/mobile-logo.png');
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Hide desktop nav links */
+  .custom-navbar .nav {
+    display: none;
+  }
+
+  /* Get a Quote button (mobile size) */
+  .quote-btn {
+    width: 103px;
+    height: 32px;
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  /* Mobile menu button */
+  .menu-btn {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .menu-btn img {
+    width: 24px;
+    height: 24px;
+  }
+  
+}/* Desktop: hide mobile controls */
+.mobile-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop nav */
+  .custom-navbar .nav {
+    display: none;
+  }
+
+  /* Show mobile controls */
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Requirement Bar -->
+  <div class="requirement-bar">
+    <div class="container d-flex align-items-center justify-content-center">
+      <p class="requirement-text text-center text-md-start">
+        Have a Requirement in Mind? Send Us Your Inquiry
+      </p>
+      <img src="assets/arrow-right.svg" alt="Arrow" class="arrow-icon mx-3">
+      <p class="inquire-text">Inquire Now</p>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="custom-navbar">
+  <div class="container d-flex align-items-center justify-content-between">
+    <!-- Logo -->
+    <a href="#">
+      <img src="assets/logo.svg" alt="Logo" class="navbar-logo">
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="nav ms-5 d-none d-md-flex">
+      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+
+    <!-- Desktop "Get a Quote" button -->
+    <button class="quote-btn d-none d-md-flex">Get a Quote</button>
+
+    <!-- Mobile controls -->
+    <div class="mobile-controls d-flex align-items-center d-md-none">
+      <button class="quote-btn">Get a Quote</button>
+      <button class="menu-btn">
+        <img src="assets/menu.png" alt="Menu">
+      </button>
+    </div>
+  </div>
+</nav>
+<!-- Hero Section -->
+<!-- Hero Section -->
+<section class="hero-section container-fluid">
+  <div class="row no-gutters">
+
+    <!-- Left Content -->
+    <div class="col-lg-6 position-relative p-0">
+      <!-- Red Block -->
+      <div class="red-block">
+        <h2>Engineered To Touch<br>Your Life Everyday</h2>
+        <button class="btn know-more-btn">
+          Know More <span>→</span>
+        </button>
+      </div>
+
+      <!-- Bottom Image -->
+      <img src="assets/hero-image-1.svg" alt="Bottom Image" class="bottom-img img-fluid">
+    </div>
+
+    <!-- Right Image -->
+    <div class="col-lg-6 p-0">
+      <img src="assets/Rectangle 23.png" alt="Hero Image" class="hero-img img-fluid">
+    </div>
+
+  </div>
+</section>
+
+
+
+<style>
+.hero-section {
+  margin-top: 0;
+  position: relative;
+}
+
+.red-block {
+  position: absolute;
+  top: 164px;
+  left: 60%; /* move it over to the right half */
+  transform: translateX(-20%); /* adjust overlap */
+  width: 533px;
+  height: 250px;
+  background-color: #d32222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 9999;
+  padding-left: 32px;
+}
+.red-block h2 {
+  width: 576px;
+  height: 146px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 130%;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  color: #FAFAFA;
+  margin: 0 0 30px 0;
+}
+
+.know-more-btn {
+  width: 200px;
+  height: 34px;
+  padding: 8px;
+  gap: 16px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  background-color: #FAFAFA;
+  color: #d32222;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.bottom-img {
+  position: absolute;
+  bottom: 0;
+  right: 0; /* stick to hero-img side */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  z-index: 2; /* stays above hero-img if needed */
+}
+
+/* Overflow fix for the whole site */
+body {
+  overflow-x: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .red-block {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  .red-block h2 {
+    width: 100%;
+    font-size: 32px;
+    line-height: 120%;
+    height: auto;
+  }
+  .bottom-img {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+}
+
+</style>
+
+<!-- New Section -->
+<section class="info-section">
+  <div class="container d-flex">
+    <!-- Vertical Line (no padding) -->
+    <div class="vertical-line me-4"></div>
+
+    <!-- Blocks Wrapper (with py-5 padding) -->
+    <div class="row g-4 flex-grow-1 py-5">
+      <!-- Block 1 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="info-block text-center">
+          <img src="assets/global-image.svg" alt="Logo 1" class="info-logo mb-3">
+          <h3 class="info-title">Proven in 1000+ Installations Worldwide</h3>
+          <p class="info-text">Engineered for Extreme Industrial Applications</p>
+        </div>
+      </div>
+      <!-- Block 2 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="info-block text-center">
+          <img src="assets/engineer.svg" alt="Logo 2" class="info-logo mb-3">
+          <h3 class="info-title">35+ Years of Engineering Expertise</h3>
+          <p class="info-text">Custom solutions for your industry.</p>
+        </div>
+      </div>
+      <!-- Block 3 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="info-block text-center">
+          <img src="assets/three.svg" alt="Logo 3" class="info-logo mb-3">
+          <h3 class="info-title">Industry-Leading Energy Efficient Machinery</h3>
+          <p class="info-text">Reduce OPEX with smarter air handling</p>
+        </div>
+      </div>
+      <!-- Block 4 -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="info-block text-center">
+          <img src="assets/engineer-2.svg" alt="Logo 4" class="info-logo mb-3">
+          <h3 class="info-title">24/7 Dedicated Technical Support Available</h3>
+          <p class="info-text">TMinimize downtime, maximize productivity</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+/* Vertical line */
+.info-section .container {
+  align-items: stretch; /* make children equal height */
+}
+
+.vertical-line {
+  width: 2px;
+  background-color: #DA2E2E;
+  align-self: stretch;   /* stretch full height of parent container */
+}
+
+/* Info block styling */
+.info-block {
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+}
+
+.info-logo {
+  width: 60px;  /* smaller than 80px */
+  height: 60px;
+  object-fit: contain;
+}
+
+.info-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 20px; /* smaller than 24px */
+  margin-bottom: 0.5rem;
+}
+
+.info-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 14px; /* smaller than 16px */
+  color: #555;
+}
+
+</style>
+<!-- RED SECTION (unchanged except arrow IDs for scrolling) -->
+<section class="cta-section d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-8 text-white">
+        <h2 class="cta-title">Your Main Heading</h2>
+        <p class="cta-subtext">This is the supporting subtext below the heading.</p>
+      </div>
+
+      <!-- Arrows control the card carousel -->
+     <div class="col-12 col-lg-4 d-flex justify-content-start mt-4 mt-lg-0">
+  <img id="carouselPrev" src="assets/arrow-left.svg" alt="Previous" class="arrow-icon me-4">
+  <img id="carouselNext" src="assets/arrow-right-2.svg" alt="Next" class="arrow-icon">
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CARDS -->
+<section class="card-carousel-section">
+  <div class="container position-relative">
+    <div id="cardCarousel" class="card-carousel d-flex">
+      <!-- Card -->
+      <div class="custom-card flex-shrink-0">
+        <img src="assets/product-1.svg" class="card-img" alt="Card Image 1">
+        <h3 class="card-title">Three Lobe Roots Blowers</h3>
+        <p class="card-subtext">Industries:</p>
+        <p class="card-text">Aluminium | Cement | Environmental | Food, Beverage and Pharmaceutical | Chemical | Proto-Chemical | Mining | Power Generation | Marine and Aquaculture.</p>
+        <div class="view-more d-flex justify-content-center align-items-center">
+          <span>View More</span>
+          <img src="assets/arrow-right-red.png" alt="View More" class="view-arrow">
+        </div>
+      </div>
+  <div class="custom-card flex-shrink-0">
+        <img src="assets/product-1.svg" class="card-img" alt="Card Image 1">
+        <h3 class="card-title">Three Lobe Roots Blowers</h3>
+        <p class="card-subtext">Industries:</p>
+        <p class="card-text">Aluminium | Cement | Environmental | Food, Beverage and Pharmaceutical | Chemical | Proto-Chemical | Mining | Power Generation | Marine and Aquaculture.</p>
+        <div class="view-more d-flex justify-content-center align-items-center">
+          <span>View More</span>
+          <img src="assets/arrow-right-red.png" alt="View More" class="view-arrow">
+        </div>
+      </div>
+        <div class="custom-card flex-shrink-0">
+        <img src="assets/product-1.svg" class="card-img" alt="Card Image 1">
+        <h3 class="card-title">Three Lobe Roots Blowers</h3>
+        <p class="card-subtext">Industries:</p>
+        <p class="card-text">Aluminium | Cement | Environmental | Food, Beverage and Pharmaceutical | Chemical | Proto-Chemical | Mining | Power Generation | Marine and Aquaculture.</p>
+        <div class="view-more d-flex justify-content-center align-items-center">
+          <span>View More</span>
+          <img src="assets/arrow-right-red.png" alt="View More" class="view-arrow">
+        </div>
+      </div>
+      <!-- Duplicate more cards... -->
+       <div class="custom-card flex-shrink-0">
+        <img src="assets/product-1.svg" class="card-img" alt="Card Image 1">
+        <h3 class="card-title">Three Lobe Roots Blowers</h3>
+        <p class="card-subtext">Industries:</p>
+        <p class="card-text">Aluminium | Cement | Environmental | Food, Beverage and Pharmaceutical | Chemical | Proto-Chemical | Mining | Power Generation | Marine and Aquaculture.</p>
+        <div class="view-more d-flex justify-content-center align-items-center">
+          <span>View More</span>
+          <img src="assets/arrow-right-red.png" alt="View More" class="view-arrow">
+        </div>
+      </div>
+        <div class="custom-card flex-shrink-0">
+        <img src="assets/product-1.svg" class="card-img" alt="Card Image 1">
+        <h3 class="card-title">Three Lobe Roots Blowers</h3>
+        <p class="card-subtext">Industries:</p>
+        <p class="card-text">Aluminium | Cement | Environmental | Food, Beverage and Pharmaceutical | Chemical | Proto-Chemical | Mining | Power Generation | Marine and Aquaculture.</p>
+        <div class="view-more d-flex justify-content-center align-items-center">
+          <span>View More</span>
+          <img src="assets/arrow-right-red.png" alt="View More" class="view-arrow">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* --- Red Section --- */
+.cta-section {
+  background-color: #DA2E2E;
+  height: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 120px;
+}
+/* New Subtext */
+.card-subtext {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+  color: #333;
+}
+
+.cta-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+  text-transform: capitalize;
+    margin-bottom: 1.5rem;
+}
+
+.cta-subtext {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  margin: 0;
+}
+
+.arrow-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* --- Card Section (overlap) --- */
+.card-carousel-section {
+  margin-top: -100px;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 50px;
+}
+
+/* Carousel row */
+.card-carousel {
+  display: flex;
+  gap: 2rem;                  /* spacing between cards */
+  overflow-x: auto;           /* horizontal scroll only */
+  overflow-y: hidden;         /* prevent vertical scrollbar */
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;     /* breathing room, not a scrollbar */
+}
+
+/* Hide scrollbar UI (still scrollable) */
+.card-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card-carousel {
+  -ms-overflow-style: none;   /* IE/Edge */
+  scrollbar-width: none;      /* Firefox */
+}
+
+/* Card */
+.custom-card {
+  width: 360px;
+  height: 504px;
+  border: 1px solid #ddd;
+  /* border-radius: 12px; */
+  background: #fff;
+  text-align: center;
+  padding: 1rem;
+  flex-shrink: 0;
+  overflow: hidden;           /* no inner scrollbars */
+  box-sizing: border-box;
+}
+
+/* Image: fit container to avoid overflow causing bottom scrollbar */
+.card-img {
+  width: 100%;
+  height: 215px;              /* keep Figma height */
+  object-fit: cover;
+  /* border-radius: 8px; */
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Text styles */
+.card-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  margin: 1rem 0 0.5rem;
+}
+
+.card-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* View more */
+.view-more {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: #DA2E2E;
+  gap: 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view-arrow {
+  width: 24px;
+  height: 24px;
+  display: inline-block; /* Ensures visibility */
+}
+
+</style>
+
+<script>
+/* Optional: make the arrows scroll the card row */
+(function(){
+  const carousel = document.getElementById('cardCarousel');
+  const prev = document.getElementById('carouselPrev');
+  const next = document.getElementById('carouselNext');
+  if (!carousel || !prev || !next) return;
+
+  function getGapPx(el){
+    const cs = getComputedStyle(el);
+    const gap = parseInt(cs.columnGap || cs.gap || '0', 10);
+    return isNaN(gap) ? 0 : gap;
+  }
+
+  function scrollByOne(dir){
+    const card = carousel.querySelector('.custom-card');
+    const gap = getGapPx(carousel) || 32; // fallback for 2rem
+    const delta = (card ? card.offsetWidth : 360) + gap;
+    carousel.scrollBy({ left: dir * delta, behavior: 'smooth' });
+  }
+
+  prev.addEventListener('click', () => scrollByOne(-1));
+  next.addEventListener('click', () => scrollByOne(1));
+})();
+</script>
+
+<!-- New Red Banner Section -->
+<!-- New Red Banner Section -->
+<section class="red-banner-section d-flex align-items-center">
+  <div class="container">
+    <h2 class="banner-heading">Services</h2>
+    <p class="banner-subtext">Reliable After-Sales Services Designed to Maximize Uptime and Minimize Downtime.</p>
+  </div>
+</section>
+
+<style>
+/* --- Red Banner Section --- */
+.red-banner-section {
+  background: #DA2E2E;
+  height: 187px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center; /* vertical centering within 187px height */
+}
+
+/* Heading */
+.banner-heading {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+/* Subtext */
+.banner-subtext {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  margin: 0;
+  color: #fff;
+}
+
+</style>
+
+<!-- Services Section -->
+<section class="services-section">
+  <div class="services-image">
+    <img src="assets/male-worker-factory.svg" alt="Services" />
+  </div>
+  <div class="services-content">
+      <div class="services-grid">
+  <div class="service-item">
+    <h3>Annual Maintenance</h3>
+    <p>Ensure peak performance year-round...</p>
+  </div>
+        <div class="service-item">
+          <h3 class="service-title">Workshop Repairs</h3>
+          <p class="service-text">In-depth repairs at our workshop with clear quotations and prompt return delivery.</p>
+        </div>
+
+        <div class="service-item">
+          <h3 class="service-title">Supervision of erection and commissioning</h3>
+          <p class="service-text">Our expert engineers ensure smooth installation and commissioning — guiding you end-to-end.</p>
+        </div>
+        <div class="service-item">
+          <h3 class="service-title">Services for Roots Blower and Liquid Ring Vacuum</h3>
+          <p class="service-text">We service and supply parts for non-TMVT machines too.</p>
+        </div>
+
+        <div class="service-item">
+          <h3 class="service-title">On-site overhaul and repair</h3>
+          <p class="service-text">Swift on-site overhauls and repairs by our engineers to ensure minimal loss of uptime.</p>
+        </div>
+        <div class="service-item">
+          <h3 class="service-title">Technical Help</h3>
+          <p class="service-text">Facing an issue? Our support team is here to diagnose problems and answer service queries.</p>
+        </div>
+
+        <div class="service-item">
+          <h3 class="service-title">Spare Parts</h3>
+          <p class="service-text">Only TMVT parts can guarantee the precision and accuracy needed.</p>
+        </div>
+     <div class="service-item contact-us-item">
+  <div class="contact-left">
+    <h3 class="service-title">Write to us at</h3>
+    <p class="service-text"> <a href="mailto:service@tmvt.com">service@tmvt.com</a></p>
+  </div>
+  <div class="contact-right">
+    <img src="assets/top-arrow.svg" alt="Robo" class="robo-img">
+    <span class="know-more-text">Know More</span>
+  </div>
+</div>
+  </div>
+</section>
+<style>
+  /* --- Services Section --- */
+.services-section {
+  display: flex;
+  align-items: stretch;
+  width: 100vw;          /* full width of viewport */
+  margin-left: calc(-50vw + 50%); /* escape container padding if inside one */
+}
+.services-image {
+  flex: 1;
+}
+
+.services-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.services-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 2rem;     /* add some spacing only inside the content */
+  background: #fff;       /* optional: to keep clear background */
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* gap: 2rem 4rem;  */
+  position: relative;
+}
+.services-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%; /* middle */
+  width: 1px;
+  background-color: #DA2E2E; /* red line */
+}
+.service-item {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #DA2E2E;
+}
+
+.service-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.service-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  margin: 0;
+  color: #555;
+}
+
+/* View More */
+/* Only Contact Us item */
+.contact-us-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #DA2E2E;
+}
+
+/* Left text styling */
+.contact-us-item .service-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 100%;
+  color: #000000;
+  text-decoration: none;
+
+}
+
+.contact-us-item .service-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 0.5rem;
+  color: #DA2E2E;
+}
+
+/* Right side image + text */
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-right .robo-img {
+  width: 40px; /* adjust as needed */
+  height: auto;
+}
+
+.contact-right .know-more-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  text-align: center;
+}
+.contact-us-item .service-text a {
+  color: #DA2E2E;       /* red color */
+  text-decoration: none; /* remove underline if needed */
+  font-weight: 600;      /* match the text style */
+}
+/* Left column items */
+.services-grid .service-item:nth-child(odd) {
+  padding: 1.5rem 0; /* top-bottom 1.5rem, left-right 0 */
+}
+
+/* Right column items */
+.services-grid .service-item:nth-child(even) {
+  padding: 1.5rem 1rem; /* top-bottom 1.5rem, left-right 1rem */
+}
+</style>
+<section class="testimonial-section">
+  <div class="testimonial-left">
+    <img src="assets/trust-latest.png" alt="Trust">
+  </div>
+  
+  <div class="testimonial-right">
+    <h2 class="testimonial-heading">Testimonial</h2>
+    
+    <div class="testimonial-carousel-wrapper">
+      <div id="testimonialCarousel" class="testimonial-carousel">
+        <div class="testimonial-card">
+          <p class="testimonial-text">After switching to TMVT, our energy consumption dropped by 22% in clinker cooling. Their ATEX-compliant blowers are a game-changer for explosive dust environments.
+</p>
+          <div class="card-bottom">
+            <img src="assets/logo-clients.png" class="card-logo" alt="Logo">
+            <img src="assets/ratings.png" class="card-ratings" alt="Ratings">
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">After switching to TMVT, our energy consumption dropped by 22% in clinker cooling. Their ATEX-compliant blowers are a game-changer for explosive dust environments.
+</p>
+          <div class="card-bottom">
+            <img src="assets/logo-clients.png" class="card-logo" alt="Logo">
+            <img src="assets/ratings.png" class="card-ratings" alt="Ratings">
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">After switching to TMVT, our energy consumption dropped by 22% in clinker cooling. Their ATEX-compliant blowers are a game-changer for explosive dust environments.
+</p>
+          <div class="card-bottom">
+            <img src="assets/logo-clients.png" class="card-logo" alt="Logo">
+            <img src="assets/ratings.png" class="card-ratings" alt="Ratings">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Arrows -->
+    <div class="carousel-arrows">
+      <img src="assets/left-arrow.svg" class="carousel-arrow left-arrow" alt="Left">
+      <img src="assets/right-arrow.svg" class="carousel-arrow right-arrow" alt="Right">
+    </div>
+  </div>
+</section>
+
+<style>
+.testimonial-section {
+  display: flex;
+  background: #fff;
+  overflow: hidden; /* prevent horizontal overflow */
+}
+
+.testimonial-left img {
+  width: 175px;
+  height: 500px;
+  object-fit: cover;
+  margin-top: -10px;
+}
+
+.testimonial-right {
+  padding: 50px 40px;
+  position: relative;
+  flex: 1;
+}
+
+.testimonial-heading {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #DA2E2E;
+}
+
+.testimonial-carousel-wrapper {
+  overflow: hidden; /* hide scrollbar */
+  width: 100%;
+  max-width: 1240px; /* Show 2 cards (600px each) + gap (20px) + some padding */
+}
+
+.testimonial-carousel {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card {
+  flex: 0 0 auto;
+  width: 600px;
+  height: 260px;
+  padding: 20px;
+  background: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-logo {
+  width: 128px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.card-ratings {
+  width: 132px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.carousel-arrow {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+(function(){
+  const carousel = document.getElementById('testimonialCarousel');
+  const wrapper = document.querySelector('.testimonial-carousel-wrapper');
+  const prev = document.querySelector('.carousel-arrows .left-arrow');
+  const next = document.querySelector('.carousel-arrows .right-arrow');
+
+  if(!carousel || !wrapper || !prev || !next) return;
+
+  let currentIndex = 0;
+  const cards = carousel.querySelectorAll('.testimonial-card');
+  const totalCards = cards.length;
+
+  function updateCarousel() {
+    const cardWidth = 600; // card width
+    const gap = 20; // gap between cards
+    const translateX = -(currentIndex * (cardWidth + gap));
+    carousel.style.transform = `translateX(${translateX}px)`;
+  }
+
+  function scrollByCard(dir) {
+    if (dir === 1 && currentIndex < totalCards - 1) {
+      currentIndex++;
+      updateCarousel();
+    } else if (dir === -1 && currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  }
+
+  prev.addEventListener('click', () => scrollByCard(-1));
+  next.addEventListener('click', () => scrollByCard(1));
+})();
+</script>
+
+<style>
+  .video-box {
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  .play-btn {
+    width: 50px;
+    height: 50px;
+    background: #e53935;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .play-btn:hover {
+    background: #c62828;
+    transform: scale(1.1);
+  }
+  .play-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+  }
+</style>
+
+<section class="py-5" style="background:#f8f9fa;">
+  <div class="container">
+    <div class="row">
+      <!-- Left Video -->
+      <div class="col-md-6">
+        <div class="video-box">
+          <div class="play-btn">
+            <!-- SVG Play Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- Right Video -->
+      <div class="col-md-6">
+        <div class="video-box">
+          <div class="play-btn">
+            <!-- SVG Play Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="custom-section d-flex align-items-center">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Left Text -->
+    <h2 class="section-text mb-0">
+      Need help with your project? Let’s talk.
+    </h2>
+    
+    <!-- Right Button -->
+    <a href="tel:+1234567890" class="btn contact-btn d-flex align-items-center">
+
+      Contact Us
+            <img src="assets/phone.png" alt="Phone" class="me-2">
+    </a>
+  </div>
+</section>
+
+<style>
+  .custom-section {
+    width: 100%; /* Instead of fixed 1728px, make it responsive */
+    max-width: 1728px;
+    height: 187px;
+    margin: 0 auto;
+    background: #fff; /* light gray background */
+    opacity: 1;
+  }
+
+  .section-text {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 33px; /* matches height */
+    max-width: 742px;
+    color: #000;
+  }
+.contact-btn {
+  width: 182px;
+  height: 64px;
+  padding: 16px;
+  gap: 16px;
+  background: #e53935;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px; /* increased font size */
+  border-radius: 0; /* removed border-radius */
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #c62828;
+}
+  .contact-btn img {
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+  }
+</style>
+<section class="cta-section d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-8 text-white">
+        <h2 class="cta-title">Your Main Heading</h2>
+        <p class="cta-subtext">This is the supporting subtext below the heading.</p>
+      </div>
+
+      <!-- Arrows control the product carousel -->
+      <div class="col-12 col-lg-4 d-flex justify-content-start mt-4 mt-lg-0">
+  <img id="carouselPrev" src="assets/arrow-left.svg" alt="Previous" class="arrow-icon me-4">
+  <img id="carouselNext" src="assets/arrow-right-2.svg" alt="Next" class="arrow-icon">
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT CARDS -->
+<section class="product-carousel-section">
+  <div class="container position-relative">
+    <div id="productCarousel" class="product-carousel d-flex">
+      <!-- Card -->
+      <div class="product-card2 flex-shrink-0">
+  <img src="assets/demo-image-1.svg" class="card-img" alt="Card Image 1">
+  <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
+  
+  
+  <!-- Date + Arrow -->
+  <div class="product-date d-flex justify-content-between align-items-center">
+    <span class="date-text">16 Aug 2025</span>
+    <img src="assets/new-right-arrow.png" alt="Arrow" class="date-arrow">
+  </div>
+</div>
+
+<div class="product-card2 flex-shrink-0">
+  <img src="assets/demo-image-2.svg" class="card-img" alt="Card Image 2">
+  <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
+
+  
+  <div class="product-date d-flex justify-content-between align-items-center">
+    <span class="date-text">20 Aug 2025</span>
+    <img src="assets/new-right-arrow.png" alt="Arrow" class="date-arrow">
+  </div>
+</div>
+<div class="product-card2 flex-shrink-0">
+  <img src="assets/demo-image-3.svg" class="card-img" alt="Card Image 2">
+  <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
+
+  
+  <div class="product-date d-flex justify-content-between align-items-center">
+    <span class="date-text">20 Aug 2025</span>
+    <img src="assets/new-right-arrow.png" alt="Arrow" class="date-arrow">
+  </div>
+</div>
+<div class="product-card2 flex-shrink-0">
+  <img src="assets/demo-image-1.svg" class="card-img" alt="Card Image 2">
+  <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
+
+  
+  <div class="product-date d-flex justify-content-between align-items-center">
+    <span class="date-text">20 Aug 2025</span>
+    <img src="assets/new-right-arrow.png" alt="Arrow" class="date-arrow">
+  </div>
+</div>
+<div class="product-card2 flex-shrink-0">
+  <img src="assets/demo-image-3.svg" class="card-img" alt="Card Image 3">
+  <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
+
+  
+  <div class="product-date d-flex justify-content-between align-items-center">
+    <span class="date-text">25 Aug 2025</span>
+    <img src="assets/new-right-arrow.png" alt="Arrow" class="date-arrow">
+  </div>
+</div>
+
+      
+      <!-- Duplicate more product-card... -->
+    </div>
+  </div>
+</section>
+
+<style>
+/* --- Red Section --- */
+.cta-section {
+  background-color: #DA2E2E;
+  height: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 120px;
+}
+
+/* Product carousel section */
+.product-carousel-section {
+  margin-top: -100px;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 50px;
+}
+
+/* Carousel row */
+.product-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+}
+.product-carousel::-webkit-scrollbar { display: none; }
+.product-carousel { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Product card */
+/* Product card */
+/* Product card */
+.product-card2 {
+  width: 360px;
+  border: 1px solid #ddd;
+  background: #FAFAFA;
+  text-align: center;
+  padding: 0 0 1rem;  /* ⬅️ removed left/right padding */
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Image */
+/* Image */
+.card-img {
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  display: block;
+  margin: 0 0 1rem; /* only bottom margin */
+}
+
+/* Image */
+.card-img {
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  display: block;
+  margin: 0 0 1rem; /* ⬅️ remove extra space above */
+}
+
+/* Image */
+.card-img {
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Text styles */
+.card-title2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  margin: 1rem 0 0.5rem;
+  padding: 0.6rem;
+  text-align: left;   /* ⬅️ force left */
+}
+
+
+.card-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-align: left;   /* ⬅️ added */
+}
+/* Product view more */
+.product-view {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: #DA2E2E;
+  gap: 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-date {
+  margin-top: 12px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  padding-top: 20px;
+  letter-spacing: 0;
+  padding:0.8rem;
+}
+
+.date-text {
+  color: #000; /* adjust if needed */
+}
+
+.date-arrow {
+  width: 34px;
+  height: auto;
+}
+
+.view-arrow {
+  width: 24px;
+  height: 24px;
+}
+</style>
+
+<script>
+/* Arrows for product carousel */
+(function(){
+  const carousel = document.getElementById('productCarousel');
+  const prev = document.getElementById('productPrev');
+  const next = document.getElementById('productNext');
+  if (!carousel || !prev || !next) return;
+
+  function getGapPx(el){
+    const cs = getComputedStyle(el);
+    const gap = parseInt(cs.columnGap || cs.gap || '0', 10);
+    return isNaN(gap) ? 0 : gap;
+  }
+
+  function scrollByOne(dir){
+    const card = carousel.querySelector('.product-card');
+    const gap = getGapPx(carousel) || 32; // fallback for 2rem
+    const delta = (card ? card.offsetWidth : 360) + gap;
+    carousel.scrollBy({ left: dir * delta, behavior: 'smooth' });
+  }
+
+  prev.addEventListener('click', () => scrollByOne(-1));
+  next.addEventListener('click', () => scrollByOne(1));
+})();
+</script>
+
+
+<section class="network-section container">
+  <div class="row d-flex align-items-stretch">
+    <!-- Left Section -->
+    <div class="col-md-5 left-content">
+      <h2 class="network-title">Our Network</h2>
+
+      <!-- Blocks -->
+      <div class="network-block">
+        <h3 class="network-heading">New Delhi</h3>
+        <p class="network-text">+91 9872032117 / 7827030301</p>
+      </div>
+
+      <div class="network-block">
+        <h3 class="network-heading">Ahmedabad</h3>
+        <p class="network-text">+91 79 40084280 / 40084283 / 40084284</p>
+      </div>
+
+      <div class="network-block">
+        <h3 class="network-heading">Mumbai</h3>
+        <p class="network-text">+91 22 23850060 / 22830068</p>
+      </div>
+
+      <div class="network-block">
+        <h3 class="network-heading">Hyderabad</h3>
+        <p class="network-text">+91 40 66659031 / 66659980</p>
+      </div>
+
+      <div class="network-block">
+        <h3 class="network-heading">Bangalore</h3>
+        <p class="network-text">+91 7777036871 / 8655836554</p>
+      </div>
+
+      <div class="network-block">
+        <h3 class="network-heading">Chennai</h3>
+        <p class="network-text">+91 8144112817 / 7069003882</p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="col-md-1 d-flex justify-content-center">
+      <hr class="vertical-divider">
+    </div>
+
+    <!-- Right Section -->
+    <div class="col-md-6 right-content">
+      <img src="assets/map.png" alt="India Map" class="network-map">
+    </div>
+  </div>
+</section>
+
+<style>
+.network-section {
+  margin: 60px auto;
+}
+
+.left-content {
+  padding-right: 30px;
+}
+
+.network-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 100%;
+  text-transform: capitalize;
+  color: #DA2E2E;
+  margin-bottom: 3rem;
+}
+
+.network-block {
+  margin-bottom: 1.5rem;
+}
+
+.network-heading {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.network-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  color: #666666;
+  margin-bottom: 4rem;
+}
+
+.vertical-divider {
+  border: none;
+  border-left: 2px solid #DA2E2E;
+  height: 100%;
+  margin: 0;
+}
+
+.right-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.network-map {
+  width: 562px;
+  height: 619px;
+  object-fit: contain;
+  display: block;
+      margin-left: 100px; /* ensures horizontal centering */
+}
+
+</style>
+
+</body>
+</html>
