@@ -1,0 +1,938 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requirement Bar + Navbar</title>
+
+   <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    /* Requirement bar */
+    .requirement-bar {
+      background-color: #FAFAFA;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .requirement-text,
+    .inquire-text {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 100%;
+      color: #000;
+      margin: 0;
+    }
+
+    .arrow-icon {
+      width: 40px;
+      height: 40px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+      background-color: #FAFAFA;
+      height: 160px;
+      display: flex;
+      align-items: center;
+    }
+
+   .custom-navbar .nav-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  padding: 0;
+  margin-left: 50px; /* increased gap between links */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+   .custom-navbar .nav-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  padding: 0;
+  margin-left: 50px; /* more gap between links */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #DA2E2E;
+}
+
+.custom-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #DA2E2E;
+  transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 30px; /* wider dash when hovered */
+}
+
+    .navbar-logo {
+      height: 120px;
+      width: 218px;
+    }
+
+    /* Get a Quote button */
+    .quote-btn {
+      background-color: #DA2E2E;
+      color: #fff;
+      width: 176px;
+      height: 64px;
+      padding: 16px;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 20px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .quote-btn:hover {
+      background-color: #b32222;
+    }
+    /* Mobile responsive styles */
+@media (max-width: 768px) {
+  /* Requirement Bar */
+  .requirement-bar {
+    width: 440px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 0 10px;
+            padding-top: 20px;
+  }
+  .requirement-bar .container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+  .requirement-text,
+  .inquire-text {
+    font-size: 14px;
+  }
+  .arrow-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Navbar */
+  .custom-navbar {
+    width: 440px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+  .custom-navbar .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Replace logo with mobile version */
+  .navbar-logo {
+    content: url('assets/mobile-logo.png');
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Hide desktop nav links */
+  .custom-navbar .nav {
+    display: none;
+  }
+
+  /* Get a Quote button (mobile size) */
+  .quote-btn {
+    width: 103px;
+    height: 32px;
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  /* Mobile menu button */
+  .menu-btn {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .menu-btn img {
+    width: 24px;
+    height: 24px;
+  }
+  
+}/* Desktop: hide mobile controls */
+.mobile-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop nav */
+  .custom-navbar .nav {
+    display: none;
+  }
+
+  /* Show mobile controls */
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Requirement Bar -->
+  <div class="requirement-bar">
+    <div class="container d-flex align-items-center justify-content-center">
+      <p class="requirement-text text-center text-md-start">
+        Have a Requirement in Mind? Send Us Your Inquiry
+      </p>
+      <img src="assets/arrow-right.svg" alt="Arrow" class="arrow-icon mx-3">
+      <p class="inquire-text">Inquire Now</p>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="custom-navbar">
+  <div class="container d-flex align-items-center justify-content-between">
+    <!-- Logo -->
+    <a href="index.html">
+      <img src="assets/logo.svg" alt="Logo" class="navbar-logo">
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="nav ms-5 d-none d-md-flex">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+
+    <!-- Desktop "Get a Quote" button -->
+    <button class="quote-btn d-none d-md-flex">Get a Quote</button>
+
+    <!-- Mobile controls -->
+    <div class="mobile-controls d-flex align-items-center d-md-none">
+      <button class="quote-btn">Get a Quote</button>
+      <button class="menu-btn">
+        <img src="assets/menu.png" alt="Menu">
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+<!-- New Section -->
+<section class="services-header ">
+  <div class="container">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumb">
+         <img src="assets/polygon.png" alt=">" class="breadcrumb-icon">
+      <a href="#">Home</a> 
+      <img src="assets/polygon.png" alt=">" class="breadcrumb-icon">
+      <a href="#">Services</a>
+    </nav>
+
+    <!-- Title -->
+    <h2 class="services-title ">Services</h2>
+    <p class="services-subtitle">
+      Reliable After-Sales Services Designed to Maximize Uptime and Minimize Downtime
+    </p>
+  </div>
+</section>
+
+  <!-- Services List -->
+  <section class="services-list container">
+    <!-- Card 1 -->
+    <div class="service-card">
+      <div class="col-md-4">
+        <img src="assets/sample-1.svg" alt="Annual Maintenance" class="service-img">
+      </div>
+      <div class="col-md-8 offset-md-2 ">
+        <h3 class="service-heading">Annual Maintenance</h3>
+        <p class="service-text">
+          Our expert technicians ensure your machine’s optimal performance and service life. After inspection, we provide a detailed quotation. Upon approval, spare parts are dispatched, and servicing is carried out efficiently to minimize downtime. We also assess machine aging, efficiency, and recommend necessary upgrades, providing a complete health report if required.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="service-card">
+      <div class="col-md-4">
+        <img src="assets/sample-2.svg" alt="On Site Overhaul And Repair" class="service-img">
+      </div>
+      <div class="col-md-8 offset-md-2 ">
+        <h3 class="service-heading">On Site Overhaul And Repair</h3>
+        <p class="service-text">
+          Our service engineers will execute general overhaul and repairs on site as soon as possible to ensure minimum loss of productivity.
+        </p>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="col-md-4">
+        <img src="assets/sample-3.svg" alt="On Site Overhaul And Repair" class="service-img">
+      </div>
+      <div class="col-md-8 offset-md-2 ">
+        <h3 class="service-heading">On Site Overhaul And Repair</h3>
+        <p class="service-text">
+          Our service engineers will execute general overhaul and repairs on site as soon as possible to ensure minimum loss of productivity.
+        </p>
+      </div>
+    </div>
+        <div class="service-card">
+      <div class="col-md-4">
+        <img src="assets/sample-4.svg" alt="On Site Overhaul And Repair" class="service-img">
+      </div>
+      <div class="col-md-8 offset-md-2 ">
+        <h3 class="service-heading">On Site Overhaul And Repair</h3>
+        <p class="service-text">
+          Our service engineers will execute general overhaul and repairs on site as soon as possible to ensure minimum loss of productivity.
+        </p>
+      </div>
+    </div>
+        <div class="service-card">
+      <div class="col-md-4">
+        <img src="assets/sample-5.svg" alt="On Site Overhaul And Repair" class="service-img">
+      </div>
+      <div class="col-md-8 offset-md-2 ">
+        <h3 class="service-heading">On Site Overhaul And Repair</h3>
+        <p class="service-text">
+          Our service engineers will execute general overhaul and repairs on site as soon as possible to ensure minimum loss of productivity.
+        </p>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="service-card">
+      <div class="col-md-4">
+        <img src="assets/sample-6.svg" alt="Workshop Repairs" class="service-img">
+      </div>
+      <div class="col-md-8 offset-md-2 ">
+        <h3 class="service-heading">Workshop Repairs</h3>
+        <p class="service-text">
+          We repair machines at our works, if required. After approval, machines will be repaired and delivered to an address as per your instructions.
+        </p>
+      </div>
+    </div>
+  </section>
+<style>
+ .services-header {
+      background-color: #DA2E2E;
+      color: white;
+      padding: 80px 0 100px;
+      font-family: 'Manrope', sans-serif;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0; /* Prevent header from shrinking */
+    }
+
+    .services-list {
+      margin-top: 0; /* Removed negative margin to center properly */
+      position: relative;
+      z-index: 2;
+      padding: 0 15px;
+      flex-grow: 1; /* Allow it to grow and center vertically */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-card {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 40px;
+      margin-top: -50px;
+      padding: 20px 0;
+      max-width: 800px; /* Limit total width for better centering */
+      width: 100%;
+    }
+
+    .service-img {
+      width: 360x;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+.service-heading {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;         /* SemiBold */
+  font-style: normal;       /* SemiBold is weight, not style */
+  font-size: 30px;
+  line-height: 100%;        /* same as Figma spec */
+  letter-spacing: 0;        /* 0% means normal */
+  text-transform: capitalize;
+  margin-bottom: 20px;      /* optional spacing */
+  color: #333333;              /* adjust as per your design */
+}
+
+
+ .service-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;         /* Regular */
+  font-style: normal;       /* "Regular" means normal */
+  font-size: 20px;
+  line-height: 150%;        /* same as your spec */
+  letter-spacing: 0;        /* no extra spacing */
+  color: #333333;              /* optional, adjust to match design */
+  margin-bottom: 16px;      /* spacing tweak */
+}
+
+  .breadcrumb {
+  display: flex;
+  align-items: center;   /* centers text + icon vertically */
+  gap: 15px;              /* space between items */
+  margin-bottom: 20px;
+}
+
+.breadcrumb a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline; /* small hover effect */
+}
+
+.breadcrumb-icon {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+    .services-title {
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .services-subtitle {
+      font-size: 20px;
+      font-weight: 400;
+      /* max-width: 600px; */
+    }
+
+    .custom-navbar {
+      flex-shrink: 0; /* Prevent navbar from shrinking */
+    }
+
+    .requirement-bar {
+      flex-shrink: 0; /* Prevent requirement bar from shrinking */
+    }</style>
+
+
+
+
+<!-- Call-to-Action Section -->
+<!-- Call-to-Action Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Text -->
+      <div class="col-md-8">
+        <h3 class="cta-text">Looking for customized service solutions?</h3>
+      </div>
+
+      <!-- Right Button -->
+      <div class="col-md-4 text-md-end text-center">
+        <a href="#" class="cta-btn">Book a Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.cta-section {
+  width: 100%;
+  height: 92px;
+  background-color: #DA2E2E;
+  display: flex;
+  align-items: center;
+}
+
+.cta-text {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FAFAFA;
+  margin: 0;
+  /* aligns with .services-title */
+  line-height: 100%;
+}
+.cta-btn {
+  display: inline-block;
+  background-color: #FAFAFA;
+  color: #DA2E2E;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;       /* smaller font */
+  font-weight: 600;
+  padding: 12px 24px;    /* reduced padding */
+  border-radius: 6px;    /* slightly smaller radius */
+  text-decoration: none;
+  transition: 0.3s ease;
+  height: 48px;          /* reduced height */
+  line-height: 24px;     /* centers text inside */
+}
+
+.cta-btn:hover {
+  background-color: #fff;
+  color: #b32222;
+}
+
+</style>
+<div class="space"></div>
+<section class="faq-cta-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left Text -->
+      <div class="col-md-8">
+        <h3 class="faq-cta-text">Frequently Asked Questions (FAQ)</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.space {
+  padding-top: 100px;
+}
+
+.faq-cta-section {
+  width: 100%;
+  height: 92px;
+  background-color: #DA2E2E;
+  display: flex;
+  align-items: center;
+}
+
+.faq-cta-text {
+  font-family: 'Manrope', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #FAFAFA;
+  margin: 0;
+  line-height: 100%;
+}
+
+/* Optional button, renamed */
+.faq-cta-btn {
+  display: inline-block;
+  background-color: #FAFAFA;
+  color: #DA2E2E;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  height: 48px;
+  line-height: 24px;
+}
+
+.faq-cta-btn:hover {
+  background-color: #fff;
+  color: #b32222;
+}
+</style>
+
+<section class="faq-section">
+  <div class="container"> <!-- aligns with Services section -->
+ 
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h4>What is a heat pump and how does it work?</h4>
+        <img src="assets/chevron-down.png" alt="Toggle answer" class="dropdown-icon" />
+      </div>
+      <div class="faq-answer">
+        <p>Heat pumps transfer heat from one place to another using a refrigerant cycle. They can be used for both heating and cooling.</p>
+      </div>
+      <hr />
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h4>Are heat pumps energy efficient?</h4>
+        <img src="assets/chevron-down.png" alt="Toggle answer" class="dropdown-icon" />
+      </div>
+      <div class="faq-answer">
+        <p>Yes, heat pumps are more energy efficient compared to traditional heating methods because they move heat rather than generate it.</p>
+      </div>
+      <hr />
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h4>Can heat pumps be used in cold climates?</h4>
+        <img src="assets/chevron-down.png" alt="Toggle answer" class="dropdown-icon" />
+      </div>
+      <div class="faq-answer">
+        <p>Modern heat pumps can work efficiently in colder climates with improved technology such as variable speed compressors.</p>
+      </div>
+      <hr />
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <h4>How long does a heat pump last?</h4>
+        <img src="assets/chevron-down.png" alt="Toggle answer" class="dropdown-icon" />
+      </div>
+      <div class="faq-answer">
+        <p>With proper maintenance, a heat pump can last between 10–15 years or longer.</p>
+      </div>
+      <hr />
+    </div>
+  </div>
+</section>
+
+<style>
+.faq-section {
+  padding: 3rem 0; /* reduced vertical padding */
+  background-color: #ffffff;
+}
+
+.container {
+  /* match Services section width */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.faq-heading {
+  font-family: 'Fahkwang', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;  /* slightly smaller to fit nicely */
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  color: #DA2E2E;
+}
+
+.faq-item {
+  margin-bottom: 1.6rem;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question h4 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 0;
+  color: #333333;
+}
+
+.dropdown-icon {
+  width: 1.8rem;
+  height: 1.8rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  margin-top: 0.6rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: #333333;
+  display: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dcdcdc;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .faq-heading {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .faq-question h4 {
+    font-size: 1rem;
+  }
+
+  .dropdown-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  hr {
+    margin-top: 0.8rem;
+  }
+}
+</style>
+
+<script>
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    const icon = item.querySelector('.dropdown-icon');
+
+    question.addEventListener('click', () => {
+      const isOpen = answer.style.display === 'block';
+      answer.style.display = isOpen ? 'none' : 'block';
+      icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+  });
+</script>
+
+
+
+
+
+
+ <footer class="custom-footer">
+  <div class="container-fluid px-5">
+
+    <!-- Top row: text + icons -->
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="footer-title">Engineered to touch your life everyday!</h2>
+      <div class="footer-icons d-flex gap-3">
+        <img src="assets/linkedin-logo.png" alt="LinkedIn" class="footer-icon">
+        <img src="assets/facebook-logo.png" alt="Facebook" class="footer-icon">
+        <img src="assets/instagram-logo.png" alt="Instagram" class="footer-icon">
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="footer-line">
+
+    <!-- Middle row: Resources & Logos -->
+    <div class="d-flex justify-content-between align-items-start mt-4">
+      <!-- Left Section -->
+      <div>
+        <h3 class="footer-subtitle">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Get a Quote</a></li>
+          <li><a href="#">Downloads</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Section Logos -->
+      <div class="d-flex flex-wrap gap-3 justify-content-end footer-cert-logos">
+        <img src="assets/atex-logo.png" alt="ATEX">
+        <img src="assets/make-in-india-logo.png" alt="Made in India">
+        <img src="assets/bureau-logo.png" alt="Certification">
+        <img src="assets/ce-logo.png" alt="CE">
+      </div>
+    </div>
+
+    <!-- Middle Logo -->
+<div class="footer-center-logo text-center my-4">
+  <img src="assets/footer-logo-new.png" alt="TMVT Logo">
+</div>
+
+
+
+    <!-- Bottom Row -->
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+      <!-- Left -->
+      <p class="footer-credit">
+        ©2025 TMVT Industries Pvt. Ltd | Crafted by The Yellow Strawberry
+      </p>
+      <!-- Right -->
+      <div class="footer-bottom-links d-flex gap-4">
+        <a href="#">Disclaimer</a>
+        <a href="#">Privacy Statement</a>
+        <a href="#">Legal Terms</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<style>
+  .footer-cert-logos {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr); /* 2 logos per row */
+  gap: 20px; /* spacing between logos */
+  justify-items: end; /* align to the right */
+}
+
+.footer-cert-logos img {
+  max-width: 120px; /* keep logos balanced */
+  height: auto;
+}
+
+  .custom-footer {
+  width: 100%;
+  max-width: 1728px;
+  margin: auto;
+  padding: 40px 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+.footer-title {
+  font-weight: 600;
+  font-size: 24px;
+  color: #DA2E2E;
+  margin: 0;
+}
+
+.footer-icons .footer-icon {
+  width: 64px;
+  height: 64px;
+}
+.footer-line {
+  border: none;
+  height: 2px;
+  background-color: #DA2E2E; /* same red tone as your title */
+  opacity: 1;
+  margin: 40px 0 60px 0; /* top: 40px, bottom: 60px */
+}
+
+
+.footer-subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  margin-bottom: 30px !important;
+}
+
+.footer-links {
+  display: grid !important;
+  grid-template-columns: repeat(2, auto); /* 2 per row */
+  gap: 20px 40px; /* row gap + column gap */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit; /* use footer’s color */
+}
+
+
+
+
+.footer-links a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #DA2E2E;
+}
+
+.footer-cert-logos img {
+  width: 214px;
+  height: 85px;
+  object-fit: contain;
+}
+.footer-line {
+  opacity: 1;
+  width: 100%;
+ 
+}
+
+.footer-center-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* spacing between lines and logo */
+  width: 100%;
+}
+
+.footer-center-logo::before,
+.footer-center-logo::after {
+  content: "";
+  flex: 1;
+  height: 2px;            /* thickness of the line */
+  background-color: #DA2E2E; /* same color as hr */
+  opacity: 1;             /* solid line */
+}
+
+
+.footer-center-logo img {
+  margin-top: -2px;     /* fine-tune if logo sits above/below hr */
+  display: block;
+}
+
+
+.footer-credit {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  max-width: 550px;
+}
+
+.footer-bottom-links a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #000;
+}
+
+.footer-bottom-links a:hover {
+  color: #DA2E2E;
+}
+
+</style>
+</body>
+</html>
