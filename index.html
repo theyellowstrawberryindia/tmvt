@@ -1212,9 +1212,9 @@ body {
       </div>
 
       <!-- Arrows control the product carousel -->
-      <div class="col-12 col-lg-4 d-flex justify-content-start mt-4 mt-lg-0">
-  <img id="carouselPrev" src="assets/arrow-left.svg" alt="Previous" class="arrow-icon me-4">
-  <img id="carouselNext" src="assets/arrow-right-2.svg" alt="Next" class="arrow-icon">
+ <div class="col-12 col-lg-4 d-flex justify-content-start mt-4 mt-lg-0">
+  <img id="productPrev" src="assets/arrow-left.svg" alt="Previous" class="arrow-icon me-4">
+  <img id="productNext" src="assets/arrow-right-2.svg" alt="Next" class="arrow-icon">
 </div>
 
     </div>
@@ -1559,6 +1559,204 @@ body {
 }
 
 </style>
+<!-- ======= Custom Footer Section ======= -->
+<footer class="custom-footer">
+  <div class="container-fluid px-5">
 
+    <!-- Top row: text + icons -->
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="footer-title">Engineered to touch your life everyday!</h2>
+      <div class="footer-icons d-flex gap-3">
+        <img src="assets/linkedin-logo.png" alt="LinkedIn" class="footer-icon">
+        <img src="assets/facebook-logo.png" alt="Facebook" class="footer-icon">
+        <img src="assets/instagram-logo.png" alt="Instagram" class="footer-icon">
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="footer-line">
+
+    <!-- Middle row: Resources & Logos -->
+    <div class="d-flex justify-content-between align-items-start mt-4">
+      <!-- Left Section -->
+      <div>
+        <h3 class="footer-subtitle">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Get a Quote</a></li>
+          <li><a href="#">Downloads</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Section Logos -->
+      <div class="d-flex flex-wrap gap-3 justify-content-end footer-cert-logos">
+        <img src="assets/atex-logo.png" alt="ATEX">
+        <img src="assets/make-in-india-logo.png" alt="Made in India">
+        <img src="assets/bureau-logo.png" alt="Certification">
+        <img src="assets/ce-logo.png" alt="CE">
+      </div>
+    </div>
+
+    <!-- Middle Logo -->
+<div class="footer-center-logo text-center my-4">
+  <img src="assets/footer-logo-new.png" alt="TMVT Logo">
+</div>
+
+
+
+    <!-- Bottom Row -->
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+      <!-- Left -->
+      <p class="footer-credit">
+        ©2025 TMVT Industries Pvt. Ltd | Crafted by The Yellow Strawberry
+      </p>
+      <!-- Right -->
+      <div class="footer-bottom-links d-flex gap-4">
+        <a href="#">Disclaimer</a>
+        <a href="#">Privacy Statement</a>
+        <a href="#">Legal Terms</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<style>
+  .footer-cert-logos {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr); /* 2 logos per row */
+  gap: 20px; /* spacing between logos */
+  justify-items: end; /* align to the right */
+}
+
+.footer-cert-logos img {
+  max-width: 120px; /* keep logos balanced */
+  height: auto;
+}
+
+  .custom-footer {
+  width: 100%;
+  max-width: 1728px;
+  margin: auto;
+  padding: 40px 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+.footer-title {
+  font-weight: 600;
+  font-size: 24px;
+  color: #DA2E2E;
+  margin: 0;
+}
+
+.footer-icons .footer-icon {
+  width: 64px;
+  height: 64px;
+}
+.footer-line {
+  border: none;
+  height: 2px;
+  background-color: #DA2E2E; /* same red tone as your title */
+  opacity: 1;
+  margin: 40px 0 60px 0; /* top: 40px, bottom: 60px */
+}
+
+
+.footer-subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  margin-bottom: 30px !important;
+}
+
+.footer-links {
+  display: grid !important;
+  grid-template-columns: repeat(2, auto); /* 2 per row */
+  gap: 20px 40px; /* row gap + column gap */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit; /* use footer’s color */
+}
+
+
+
+
+.footer-links a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #DA2E2E;
+}
+
+.footer-cert-logos img {
+  width: 214px;
+  height: 85px;
+  object-fit: contain;
+}
+.footer-line {
+  opacity: 1;
+  width: 100%;
+ 
+}
+
+.footer-center-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* spacing between lines and logo */
+  width: 100%;
+}
+
+.footer-center-logo::before,
+.footer-center-logo::after {
+  content: "";
+  flex: 1;
+  height: 2px;            /* thickness of the line */
+  background-color: #DA2E2E; /* same color as hr */
+  opacity: 1;             /* solid line */
+}
+
+
+.footer-center-logo img {
+  margin-top: -2px;     /* fine-tune if logo sits above/below hr */
+  display: block;
+}
+
+
+.footer-credit {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  max-width: 550px;
+}
+
+.footer-bottom-links a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #000;
+}
+
+.footer-bottom-links a:hover {
+  color: #DA2E2E;
+}
+
+</style>
 </body>
 </html>
