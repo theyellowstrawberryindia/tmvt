@@ -1,0 +1,451 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+
+   <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap" rel="stylesheet">
+
+<style>
+    /* Requirement bar */
+    .requirement-bar {
+      background-color: #FAFAFA;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .requirement-text,
+    .inquire-text {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: #000;
+      margin: 0;
+    }
+
+    .arrow-icon {
+      width: 24px;
+      height: 24px;
+    }
+ .arrow-icon2 {
+      width: 34px;
+      height: 34px;
+    }
+    /* Navbar */
+    .custom-navbar {
+      background-color: #FAFAFA;
+      height: 120px;
+      display: flex;
+      align-items: center;
+    }
+
+   .custom-navbar .nav-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  padding: 0;
+  margin-left: 50px; /* increased gap between links */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+   .custom-navbar .nav-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  padding: 0;
+  margin-left: 50px; /* more gap between links */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #DA2E2E;
+}
+
+.custom-navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #DA2E2E;
+  transition: width 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 30px; /* wider dash when hovered */
+}
+
+    .navbar-logo {
+      height: 100px;
+      width: 188px;
+    }
+
+    /* Get a Quote button */
+    .quote-btn {
+      background-color: #DA2E2E;
+      color: #fff;
+      width: 126px;
+      height: 44px;
+      padding: 16px;
+      border: none;
+      
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .quote-btn:hover {
+      background-color: #b32222;
+    }
+    /* Mobile responsive styles */
+@media (max-width: 768px) {
+  /* Requirement Bar */
+  .requirement-bar {
+    width: 440px;
+    height: 30px;
+    margin: 0 auto;
+    padding: 0 10px;
+            padding-top: 20px;
+  }
+  .requirement-bar .container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+  .requirement-text,
+  .inquire-text {
+    font-size: 14px;
+  }
+  .arrow-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Navbar */
+  .custom-navbar {
+    width: 440px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+  .custom-navbar .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Replace logo with mobile version */
+  .navbar-logo {
+    content: url('assets/mobile-logo.png');
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Hide desktop nav links */
+  .custom-navbar .nav {
+    display: none;
+  }
+
+  /* Get a Quote button (mobile size) */
+  .quote-btn {
+    width: 103px;
+    height: 32px;
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  /* Mobile menu button */
+  .menu-btn {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  .menu-btn img {
+    width: 24px;
+    height: 24px;
+  }
+  
+}/* Desktop: hide mobile controls */
+.mobile-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop nav */
+  .custom-navbar .nav {
+    display: none;
+  }
+
+  /* Show mobile controls */
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Requirement Bar -->
+  <div class="requirement-bar">
+    <div class="container d-flex align-items-center justify-content-center">
+      <p class="requirement-text text-center text-md-start">
+        Have a Requirement in Mind? Send Us Your Inquiry
+      </p>
+      <img src="assets/arrow-right.svg" alt="Arrow" class="arrow-icon mx-3">
+      <p class="inquire-text">Inquire Now</p>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="custom-navbar">
+  <div class="container d-flex align-items-center justify-content-between">
+    <!-- Logo -->
+    <a href="index.html">
+      <img src="assets/logo.svg" alt="Logo" class="navbar-logo">
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="nav ms-5 d-none d-md-flex">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+
+    <!-- Desktop "Get a Quote" button -->
+    <button class="quote-btn d-none d-md-flex">Get a Quote</button>
+
+    <!-- Mobile controls -->
+    <div class="mobile-controls d-flex align-items-center d-md-none">
+      <button class="quote-btn">Get a Quote</button>
+      <button class="menu-btn">
+        <img src="assets/menu.png" alt="Menu">
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<footer class="custom-footer">
+  <div class="container-fluid px-5">
+
+    <!-- Top row: text + icons -->
+    <div class="d-flex justify-content-between align-items-center">
+      <h2 class="footer-title">Engineered to touch your life everyday!</h2>
+      <div class="footer-icons d-flex gap-3">
+        <img src="assets/linkedin-logo.png" alt="LinkedIn" class="footer-icon">
+        <img src="assets/facebook-logo.png" alt="Facebook" class="footer-icon">
+        <img src="assets/instagram-logo.png" alt="Instagram" class="footer-icon">
+      </div>
+    </div>
+
+    <!-- Horizontal line -->
+    <hr class="footer-line">
+
+    <!-- Middle row: Resources & Logos -->
+    <div class="d-flex justify-content-between align-items-start mt-4">
+      <!-- Left Section -->
+      <div>
+        <h3 class="footer-subtitle">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Get a Quote</a></li>
+          <li><a href="#">Downloads</a></li>
+        </ul>
+      </div>
+
+      <!-- Right Section Logos -->
+      <div class="d-flex flex-wrap gap-3 justify-content-end footer-cert-logos">
+        <img src="assets/atex-logo.png" alt="ATEX">
+        <img src="assets/make-in-india-logo.png" alt="Made in India">
+        <img src="assets/bureau-logo.png" alt="Certification">
+        <img src="assets/ce-logo.png" alt="CE">
+      </div>
+    </div>
+
+    <!-- Middle Logo -->
+<div class="footer-center-logo text-center my-4">
+  <img src="assets/footer-logo-new.png" alt="TMVT Logo">
+</div>
+
+
+
+    <!-- Bottom Row -->
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+      <!-- Left -->
+      <p class="footer-credit">
+        ©2025 TMVT Industries Pvt. Ltd | Crafted by The Yellow Strawberry
+      </p>
+      <!-- Right -->
+      <div class="footer-bottom-links d-flex gap-4">
+        <a href="#">Disclaimer</a>
+        <a href="#">Privacy Statement</a>
+        <a href="#">Legal Terms</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<style>
+  .footer-cert-logos {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr); /* 2 logos per row */
+  gap: 20px; /* spacing between logos */
+  justify-items: end; /* align to the right */
+}
+
+.footer-cert-logos img {
+  max-width: 120px; /* keep logos balanced */
+  height: auto;
+}
+
+  .custom-footer {
+  width: 100%;
+  max-width: 1728px;
+  margin: auto;
+  padding: 40px 0;
+  font-family: 'Manrope', sans-serif;
+}
+
+.footer-title {
+  font-weight: 600;
+  font-size: 24px;
+  color: #DA2E2E;
+  margin: 0;
+}
+
+.footer-icons .footer-icon {
+  width: 64px;
+  height: 64px;
+}
+.footer-line {
+  border: none;
+  height: 2px;
+  background-color: #DA2E2E; /* same red tone as your title */
+  opacity: 1;
+  margin: 40px 0 60px 0; /* top: 40px, bottom: 60px */
+}
+
+
+.footer-subtitle {
+  font-weight: 300;
+  font-size: 20px;
+  margin-bottom: 30px !important;
+}
+
+.footer-links {
+  display: grid !important;
+  grid-template-columns: repeat(2, auto); /* 2 per row */
+  gap: 20px 40px; /* row gap + column gap */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: inherit; /* use footer’s color */
+}
+
+
+
+
+.footer-links a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #DA2E2E;
+}
+
+.footer-cert-logos img {
+  width: 214px;
+  height: 85px;
+  object-fit: contain;
+}
+.footer-line {
+  opacity: 1;
+  width: 100%;
+ 
+}
+
+.footer-center-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* spacing between lines and logo */
+  width: 100%;
+}
+
+.footer-center-logo::before,
+.footer-center-logo::after {
+  content: "";
+  flex: 1;
+  height: 2px;            /* thickness of the line */
+  background-color: #DA2E2E; /* same color as hr */
+  opacity: 1;             /* solid line */
+}
+
+
+.footer-center-logo img {
+  margin-top: -2px;     /* fine-tune if logo sits above/below hr */
+  display: block;
+}
+
+
+.footer-credit {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+  max-width: 550px;
+}
+
+.footer-bottom-links a {
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+
+  color: #000;
+}
+
+.footer-bottom-links a:hover {
+  color: #DA2E2E;
+}
+
+</style>
+</body>
+</html>
