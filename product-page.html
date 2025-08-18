@@ -12,6 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap" rel="stylesheet">
 
 <style>
+    body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
     /* Requirement bar */
     .requirement-bar {
       background-color: #FAFAFA;
@@ -407,7 +412,7 @@
 .cta-title {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 40px;
   line-height: 100%;
   text-transform: capitalize;
   margin-bottom: 1.5rem;
@@ -415,7 +420,7 @@
 .cta-subtext {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 100%;
   margin: 0;
 }
@@ -529,7 +534,7 @@
   left: 18%;
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 48px;
+  font-size: 24px;
   line-height: 100%;
   color: #fff;
   text-transform: capitalize;
@@ -542,7 +547,7 @@
   left: 18%;
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 100%;
   color: #fff;
 }
@@ -586,8 +591,429 @@
   text-decoration: none;
 }
 </style>
+<section class="client-section">
+  <div class="container">
+    <!-- Left Content -->
+    <div class="client-left">
+      <h2 class="client-title">
+        Not Sure Which Product Fits You Best? Don’t Worry,<br>
+        I’ll Guide You Reach Out To Our Sales Team Today!
+      </h2>
+      <a href="#" class="client-btn">Get Personal Assistance</a>
+    </div>
+
+    <!-- Right Image -->
+    <div class="client-right">
+      <img src="assets/client.png" alt="Client" class="client-img">
+    </div>
+  </div>
+</section>
 
 
+<style>
+    
+.client-section {
+  position: relative;
+  width: 100%;
+  height: 278px;
+  background-color: #DA2E2E;
+  display: flex;
+  align-items: center;
+  overflow: visible; /* allows image overlap */
+}
+
+.client-section .container {
+  max-width: 1728px;
+  margin: 0 auto;
+  padding: 0 125px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left content */
+.client-left {
+  max-width: 987px;
+}
+
+.client-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #FAFAFA;
+  margin-bottom: 20px;
+}
+
+.client-btn {
+  display: inline-block;
+  padding: 16px 32px;
+  background-color: #FAFAFA;
+  color: #DA2E2E;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.client-btn:hover {
+  background-color: #fff;
+  color: #b32222;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Right image */
+.client-right {
+  position: absolute;
+  right: 80px;
+  top: -60px; /* overlaps only from top */
+}
+
+.client-img {
+  width: 244px;
+  height: 338px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .client-section {
+    height: auto;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .client-section .container {
+    flex-direction: column;
+  }
+
+  .client-right {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin-top: 20px;
+  }
+
+  .client-img {
+    width: 180px;
+    height: auto;
+  }
+}
+</style>
+<section class="camera-section">
+  <div class="camera-left">
+    <img src="assets/camera.svg" alt="Camera" class="camera-img">
+  </div>
+
+  <div class="camera-right">
+    <div class="camera-feature">
+      <img src="assets/icon-1.svg" alt="Proven" class="feature-icon">
+      <h4 class="feature-title">Proven in 1000+ Installations Worldwide</h4>
+      <p class="feature-text">Engineered for Extreme Industrial Applications</p>
+    </div>
+    <div class="camera-feature">
+      <img src="assets/icon-2.svg" alt="Expertise" class="feature-icon">
+      <h4 class="feature-title">35+ Years of Engineering Expertise</h4>
+      <p class="feature-text">Custom solutions for your industry</p>
+    </div>
+    <div class="camera-feature">
+      <img src="assets/icon-3.svg" alt="Energy" class="feature-icon">
+      <h4 class="feature-title">Industry-Leading Energy Efficient Machinery</h4>
+      <p class="feature-text">Reduce OPEX with smarter air handling</p>
+    </div>
+    <div class="camera-feature">
+      <img src="assets/icon-4.svg" alt="Support" class="feature-icon">
+      <h4 class="feature-title">24/7 Dedicated Technical Support Available</h4>
+      <p class="feature-text">Minimize downtime, maximize productivity</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.camera-section {
+  width: 100vw;               /* full width */
+  min-height: 524px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  display: flex;
+  border-top: 1px solid #b32222;
+  border-bottom: 1px solid #b32222;
+}
+
+.camera-left {
+  flex: 0 0 45%;              /* 45% of width */
+}
+
+.camera-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camera-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-left: 1px solid #b32222;
+}
+
+.camera-feature {
+  padding: 40px;
+  border-bottom: 1px solid #b32222;
+  border-right: 1px solid #b32222;
+}
+
+/* Remove right border for last column in each row */
+.camera-feature:nth-child(2),
+.camera-feature:nth-child(4) {
+  border-right: none;
+}
+
+/* Remove bottom border for last row */
+.camera-feature:nth-child(3),
+.camera-feature:nth-child(4) {
+  border-bottom: none;
+}
+
+/* ✅ Add top border for first row */
+.camera-feature:nth-child(1),
+.camera-feature:nth-child(2) {
+  border-top: 1px solid #b32222;
+}
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+  opacity: 1;
+  transform: rotate(0deg); /* angle 0° */
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* centers icon */
+}
+
+.feature-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;          /* SemiBold */
+  font-size: 18px;
+  line-height: 100%;         /* tighter line spacing */
+  letter-spacing: 0;
+  text-align: center;        /* center align */
+  vertical-align: middle;
+  color: #333333;
+  margin: 0 0 12px 0;        /* a little more breathing space */
+}
+
+.feature-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;          /* Regular */
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;        /* center align */
+  color:  #333333;
+;
+  margin: 0;
+}
+
+
+/* ✅ Responsive */
+@media (max-width: 992px) {
+  .camera-section {
+    flex-direction: column;
+  }
+
+  .camera-left {
+    flex: unset;
+    width: 100%;
+    height: 300px; /* smaller height for mobile */
+  }
+
+  .camera-right {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+
+  .camera-feature {
+    border-right: none;
+  }
+}
+</style>
+<section class="help-cta">
+  <div class="help-container">
+    <h3 class="help-heading">Need Help?</h3>
+    <div class="help-boxes">
+      <div class="help-box">
+        <div class="help-title">
+        
+          <span>Request a Quote</span>
+            <img src="assets/quote.svg" alt="Pencil Icon" />
+        </div>
+        <p>Tell us about your project to get a customized quote.</p>
+      </div>
+      <div class="help-box">
+        <div class="help-title">
+
+          <span>Ask a Question</span>          <img src="assets/headset.svg" alt="Headset Icon" />
+        </div>
+        <p>Need clarity or technical support? Reach out now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .help-cta {
+  width: 100%;
+  background-color: #DA2E2E;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+
+  justify-content: center;
+}
+
+.help-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  padding-left: 100px;
+  padding-right: 3rem;
+  box-sizing: border-box;
+}
+
+.help-heading {
+  font-family: 'Fahkwang', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: capitalize;
+  margin: 0;
+  color: #ffffff;
+}
+
+.help-boxes {
+  display: flex;
+  gap: 2rem;
+}
+.help-box {
+  border: 1px solid #ffffff;
+  padding: 1rem;          /* reduced padding */
+  width: 14rem;            /* smaller width */
+        /* smaller height */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: transparent;
+}
+.help-box span{
+    font-size: 16px;
+}
+.help-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;            /* smaller gap */
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;        /* reduced from 16px */
+  line-height: 100%;
+  padding-bottom: 1rem;
+}
+
+.help-title img {
+  width: 1.5rem;            /* smaller icon */
+  height: auto;
+}
+
+.help-box p {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;        /* smaller text */
+  line-height: 100%;
+  margin: 0;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .help-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .help-heading {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .help-boxes {
+    
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .help-box {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding: 1.6rem;
+  }
+
+  .help-title {
+    font-size: 2rem;
+    gap: 1rem;
+  }
+
+  .help-title img {
+    width: 2rem;
+  }
+
+  .help-box p {
+    font-size: 1.4rem;
+  }
+}
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .help-container {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 1.6rem;
+  }
+
+  .help-heading {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .help-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .help-box {
+    width: 100%;
+    max-width: 36rem;
+    height: auto;
+  }
+
+  .help-title {
+    font-size: 2rem;
+  }
+
+  .help-box p {
+    font-size: 1.4rem;
+  }
+}
+
+</style>
+
+<!-- ======= Custom Footer Section ======= -->
 <footer class="custom-footer">
   <div class="container-fluid px-5">
 
@@ -680,8 +1106,14 @@
 }
 
 .footer-icons .footer-icon {
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+}
+.footer-icons .footer-icon:hover {
+  transform: scale(1.2) rotate(5deg);
+  opacity: 0.85;
 }
 .footer-line {
   border: none;
@@ -714,11 +1146,22 @@
 .footer-links a {
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
+
   color: inherit; /* use footer’s color */
 }
 
 
-
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #DA2E2E;
+  transition: width 0.3s ease;
+}
 
 .footer-links a {
   font-size: 16px;
@@ -732,16 +1175,25 @@
 }
 
 .footer-cert-logos img {
-  width: 214px;
-  height: 85px;
+  width: 200px;
+  height: 75px;
   object-fit: contain;
+    transition: transform 0.4s ease;
 }
 .footer-line {
   opacity: 1;
   width: 100%;
  
 }
-
+.footer-cert-logos img:hover {
+  transform: scale(1.05);
+}
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .footer-center-logo {
   display: flex;
   align-items: center;
@@ -774,8 +1226,8 @@
 }
 
 .footer-bottom-links a {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 200;
   text-decoration: none;
 
   color: #000;
