@@ -3,203 +3,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Responsive Hero Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .services-header {
-      background-color: #DA2E2E;
-      color: white;
-      padding: 80px 0 100px;
+    body {
+      overflow-x: hidden;
       font-family: 'Manrope', sans-serif;
-      position: relative;
-      z-index: 1;
-      flex-shrink: 0; /* Prevent header from shrinking */
     }
 
-    .services-list {
-      margin-top: 0; /* Removed negative margin to center properly */
+    /* Hero Section */
+    .hero-section {
       position: relative;
-      z-index: 2;
-      padding: 0 15px;
-      flex-grow: 1; /* Allow it to grow and center vertically */
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      max-height: 800px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Keep 1200x800 scaling */
+    .hero-wrapper {
+      position: relative;
+      width: 1200px;
+      height: 800px;
+      transform-origin: top left;
+    }
+
+    @media (max-width: 1200px) {
+      .hero-wrapper {
+        transform: scale(calc(100vw / 1200));
+      }
+    }
+
+    @media (max-height: 800px) {
+      .hero-wrapper {
+        transform: scale(calc(100vh / 800));
+      }
+    }
+
+    @media (max-width: 1200px) and (max-height: 800px) {
+      .hero-wrapper {
+        transform: scale(min(calc(100vw / 1200), calc(100vh / 800)));
+      }
+    }
+
+    .row {
+      margin: 0;
+      height: 100%;
+    }
+
+    .col-lg-6 {
+      padding: 0;
+      height: 100%;
+    }
+
+    /* Left Column */
+    .left-column {
+      position: relative;
+      width: 600px;
+      height: 800px;
+      background: #f8f8f8;
+    }
+
+    /* Red Block */
+    .red-block {
+      position: absolute;
+      top: 160px;
+      left: 280px; /* moved slightly left */
+      width: 480px;
+      height: 240px;
+      background-color: #d32222;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      z-index: 10;
+      padding: 32px;
     }
 
-    .service-card {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 40px;
-      padding: 20px 0;
-      max-width: 800px; /* Limit total width for better centering */
-      width: 100%;
+    .red-block h2 {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 1.3;
+      color: #FAFAFA;
+      margin: 0 0 24px 0;
     }
 
-    .service-img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 0;
-    }
-
-    .service-heading {
-      font-size: 24px;
+    .know-more-btn {
+      width: 240px;
+      height: 64px;
+      padding: 16px;
       font-weight: 600;
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    .service-text {
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #555;
-      max-width: 500px;
-    }
-
-    .breadcrumb {
-      margin-bottom: 20px;
-    }
-
-    .breadcrumb a {
-      color: white;
-      text-decoration: none;
       font-size: 16px;
-      font-weight: 500;
+      background-color: #FAFAFA;
+      color: #d32222;
+      border: none;
+      cursor: pointer;
     }
 
-    .breadcrumb-icon {
-      width: 12px;
-      margin: 0 10px;
-      filter: brightness(0) invert(1);
+    /* Bottom Image */
+    .bottom-img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 600px;
+      height: 300px;
     }
 
-    .services-title {
-      font-size: 48px;
-      font-weight: 600;
-      margin-bottom: 10px;
+    .bottom-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .services-subtitle {
-      font-size: 20px;
-      font-weight: 400;
-      max-width: 600px;
+    /* Right Column */
+    .right-column {
+      width: 600px;
+      height: 800px;
     }
 
-    .custom-navbar {
-      flex-shrink: 0; /* Prevent navbar from shrinking */
+    .hero-img {
+      width: 100%;
+      height: 100%;
     }
 
-    .requirement-bar {
-      flex-shrink: 0; /* Prevent requirement bar from shrinking */
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="custom-navbar">
-    <div class="container d-flex align-items-center justify-content-between">
-      <a href="#">
-        <img src="assets/logo.svg" alt="Logo" class="navbar-logo">
-      </a>
-      <ul class="nav ms-5 d-none d-md-flex">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-      </ul>
-      <button class="quote-btn d-none d-md-flex">Get a Quote</button>
-      <div class="mobile-controls d-flex align-items-center d-md-none">
-        <button class="quote-btn">Get a Quote</button>
-        <button class="menu-btn">
-          <img src="assets/menu.png" alt="Menu">
-        </button>
+
+  <!-- Hero Section -->
+  <section class="hero-section container-fluid p-0">
+    <div class="hero-wrapper">
+      <div class="row no-gutters">
+        
+        <!-- Left Content -->
+        <div class="col-lg-6 position-relative p-0">
+          <div class="left-column">
+            
+            <!-- Red Block -->
+            <div class="red-block position-absolute">
+              <h2>Engineered To Touch<br>Your Life Everyday</h2>
+              <button class="know-more-btn">Know More →</button>
+            </div>
+
+            <!-- Bottom Image -->
+            <div class="bottom-img">
+              <img src="assets/hero-image-1.svg" alt="Bottom Image">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Image -->
+        <div class="col-lg-6 p-0">
+          <div class="right-column">
+            <div class="hero-img">
+              <img src="assets/man-image-1.svg" alt="Hero Image">
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </nav>
-
-  <!-- Requirement Bar -->
-  <div class="requirement-bar bg-light py-2">
-    <div class="container d-flex align-items-center justify-content-center">
-      <p class="requirement-text text-center text-md-start m-0">
-        Have a Requirement in Mind? Send Us Your Inquiry
-      </p>
-      <img src="assets/arrow-right.svg" alt="Arrow" class="arrow-icon mx-3">
-      <p class="inquire-text m-0">Inquire Now</p>
-    </div>
-  </div>
-
-  <!-- Services Header -->
-  <section class="services-header">
-    <div class="container">
-      <!-- Breadcrumbs -->
-      <nav class="breadcrumb">
-        <a href="#">Home</a>
-        <img src="assets/polygon.svg" alt=">" class="breadcrumb-icon">
-        <a href="#">Services</a>
-      </nav>
-
-      <!-- Title -->
-      <h2 class="services-title">Services</h2>
-      <p class="services-subtitle">
-        Reliable After-Sales Services Designed to Maximize Uptime and Minimize Downtime
-      </p>
     </div>
   </section>
 
-  
-  <!-- Services List -->
-  <section class="services-list container">
-    <!-- Card 1 -->
-    <div class="service-card">
-      <div class="col-md-4">
-        <img src="assets/demo-image-1.svg" alt="Annual Maintenance" class="service-img">
-      </div>
-      <div class="col-md-8">
-        <h3 class="service-heading">Annual Maintenance</h3>
-        <p class="service-text">
-          Our expert technicians ensure your machine’s optimal performance and service life. After inspection, we provide a detailed quotation. Upon approval, spare parts are dispatched, and servicing is carried out efficiently to minimize downtime. We also assess machine aging, efficiency, and recommend necessary upgrades, providing a complete health report if required.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="service-card">
-      <div class="col-md-4">
-        <img src="assets/demo-image-2.svg" alt="On Site Overhaul And Repair" class="service-img">
-      </div>
-      <div class="col-md-8">
-        <h3 class="service-heading">On Site Overhaul And Repair</h3>
-        <p class="service-text">
-          Our service engineers will execute general overhaul and repairs on site as soon as possible to ensure minimum loss of productivity.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="service-card">
-      <div class="col-md-4">
-        <img src="assets/demo-image-3.svg" alt="Workshop Repairs" class="service-img">
-      </div>
-      <div class="col-md-8">
-        <h3 class="service-heading">Workshop Repairs</h3>
-        <p class="service-text">
-          We repair machines at our works, if required. After approval, machines will be repaired and delivered to an address as per your instructions.
-        </p>
-      </div>
-    </div>
-  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
