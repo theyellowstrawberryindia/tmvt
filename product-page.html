@@ -12,65 +12,83 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap" rel="stylesheet">
 
 <style>
-    body, html {
+
+body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* prevent horizontal scroll */
+  overflow-x: hidden;
 }
-    /* Requirement bar */
-    .requirement-bar {
-      background-color: #FAFAFA;
-      height: 40px;
-      display: flex;
-      align-items: center;
-    }
 
-    .requirement-text,
-    .inquire-text {
-      font-family: 'Manrope', sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 100%;
-      color: #000;
-      margin: 0;
-    }
+/* Requirement bar */
+.requirement-bar {
+  background-color: #FAFAFA;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
 
-    .arrow-icon {
-      width: 24px;
-      height: 24px;
-    }
- .arrow-icon2 {
-      width: 34px;
-      height: 34px;
-    }
-    /* Navbar */
-    .custom-navbar {
-      background-color: #FAFAFA;
-      height: 120px;
-      display: flex;
-      align-items: center;
-    }
+.requirement-text,
+.inquire-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #000;
+  margin: 0;
+}
 
-   .custom-navbar .nav-link {
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.arrow-icon2 {
+  width: 34px;
+  height: 34px;
+}
+
+/* Navbar */
+.custom-navbar {
+  background-color: #FAFAFA;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+/* Scrolled navbar state */
+.custom-navbar.scrolled {
+  height: 80px;
+  background-color: rgba(250, 250, 250, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(218, 46, 46, 0.1);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.custom-navbar .nav-link {
   font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #000;
   padding: 0;
-  margin-left: 50px; /* increased gap between links */
+  margin-left: 50px;
   position: relative;
   transition: color 0.3s ease;
-}
-
-   .custom-navbar .nav-link {
-  font-family: 'Manrope', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #000;
-  padding: 0;
-  margin-left: 50px; /* more gap between links */
-  position: relative;
-  transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .custom-navbar .nav-link:hover {
@@ -90,54 +108,91 @@
 }
 
 .custom-navbar .nav-link:hover::after {
-  width: 30px; /* wider dash when hovered */
+  width: 30px;
 }
 
-    .navbar-logo {
-      height: 100px;
-      width: 188px;
-    }
+.navbar-logo {
+  height: 100px;
+  width: 188px;
+  transition: all 0.3s ease;
+}
 
-    /* Get a Quote button */
-    .quote-btn {
-      background-color: #DA2E2E;
-      color: #fff;
-      width: 126px;
-      height: 44px;
-      padding: 16px;
-      border: none;
-      
-      font-family: 'Manrope', sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.3s ease;
-    }
+/* Logo changes when scrolled */
+.custom-navbar.scrolled .navbar-logo {
+  height: 60px;
+  width: 113px;
+}
 
-    .quote-btn:hover {
-      background-color: #b32222;
-    }
-    /* Mobile responsive styles */
+/* Navigation list */
+.nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+/* Get a Quote button */
+.quote-btn {
+  background-color: #DA2E2E;
+  color: #fff;
+  width: 126px;
+  height: 44px;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.quote-btn:hover {
+  background-color: #b32222;
+  transform: translateY(-1px);
+}
+
+/* Mobile controls */
+.mobile-controls {
+  display: none;
+}
+
+/* Desktop: show nav, hide mobile controls */
+.desktop-nav {
+  display: flex;
+}
+
+/* Mobile responsive styles */
 @media (max-width: 768px) {
   /* Requirement Bar */
   .requirement-bar {
-    width: 440px;
+    width: 100%;
+    max-width: 440px;
     height: 30px;
     margin: 0 auto;
     padding: 0 10px;
-            padding-top: 20px;
+    padding-top: 20px;
   }
+
   .requirement-bar .container {
     flex-direction: row;
     justify-content: center;
     gap: 8px;
   }
+
   .requirement-text,
   .inquire-text {
     font-size: 14px;
   }
+
   .arrow-icon {
     width: 16px;
     height: 16px;
@@ -145,56 +200,35 @@
 
   /* Navbar */
   .custom-navbar {
-    width: 440px;
+    width: 100%;
+    max-width: 440px;
     height: 80px;
     margin: 0 auto;
-    padding: 0 12px;
   }
+
+  .custom-navbar.scrolled {
+    height: 60px;
+  }
+
   .custom-navbar .container {
     justify-content: space-between;
     align-items: center;
+    padding: 0 12px;
   }
 
-  /* Replace logo with mobile version */
+  /* Mobile logo */
   .navbar-logo {
-    content: url('assets/mobile-logo.png');
     width: 60px;
     height: 60px;
   }
 
+  .custom-navbar.scrolled .navbar-logo {
+    width: 45px;
+    height: 45px;
+  }
+
   /* Hide desktop nav links */
-  .custom-navbar .nav {
-    display: none;
-  }
-
-  /* Get a Quote button (mobile size) */
-  .quote-btn {
-    width: 103px;
-    height: 32px;
-    padding: 8px 12px;
-    font-size: 14px;
-    margin-right: 8px;
-  }
-
-  /* Mobile menu button */
-  .menu-btn {
-    background: none;
-    border: none;
-    padding: 0;
-  }
-  .menu-btn img {
-    width: 24px;
-    height: 24px;
-  }
-  
-}/* Desktop: hide mobile controls */
-.mobile-controls {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  /* Hide desktop nav */
-  .custom-navbar .nav {
+  .desktop-nav {
     display: none;
   }
 
@@ -204,10 +238,64 @@
     align-items: center;
     gap: 8px;
   }
+
+  /* Get a Quote button (mobile size) */
+  .quote-btn {
+    width: 103px;
+    height: 32px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* Mobile menu button */
+  .menu-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .menu-btn img {
+    width: 24px;
+    height: 24px;
+  }
 }
 
+/* Utility classes */
+.d-flex {
+  display: flex;
+}
 
-  </style>
+.d-none {
+  display: none;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+@media (min-width: 769px) {
+  .d-md-flex {
+    display: flex !important;
+  }
+  .d-md-none {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .d-md-flex {
+    display: none !important;
+  }
+  .d-md-none {
+    display: flex !important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -224,15 +312,15 @@
 
   <!-- Navbar -->
   <!-- Navbar -->
-<nav class="custom-navbar">
+<nav class="custom-navbar" id="navbar">
   <div class="container d-flex align-items-center justify-content-between">
     <!-- Logo -->
     <a href="index.html">
-      <img src="assets/logo.svg" alt="Logo" class="navbar-logo">
+      <img src="assets/logo.svg" alt="Logo" class="navbar-logo" id="navbar-logo">
     </a>
 
     <!-- Desktop nav links -->
-    <ul class="nav ms-5 d-none d-md-flex">
+    <ul class="nav desktop-nav d-md-flex">
       <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="#">About</a></li>
       <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
@@ -241,10 +329,10 @@
     </ul>
 
     <!-- Desktop "Get a Quote" button -->
-    <button class="quote-btn d-none d-md-flex">Get a Quote</button>
+    <button class="quote-btn d-md-flex d-none">Get a Quote</button>
 
     <!-- Mobile controls -->
-    <div class="mobile-controls d-flex align-items-center d-md-none">
+    <div class="mobile-controls d-md-none">
       <button class="quote-btn">Get a Quote</button>
       <button class="menu-btn">
         <img src="assets/menu.png" alt="Menu">
@@ -252,6 +340,63 @@
     </div>
   </div>
 </nav>
+
+<script>
+// Sticky navbar with logo change on scroll
+document.addEventListener('DOMContentLoaded', function() {
+  const navbar = document.getElementById('navbar');
+  const logo = document.getElementById('navbar-logo');
+  
+  // Original logo sources
+  const desktopLogo = 'assets/logo.svg';
+  const mobileLogo = 'assets/mobile-logo.png';
+  const scrolledDesktopLogo = 'assets/logo-small.svg'; // Add your small logo here
+  const scrolledMobileLogo = 'assets/mobile-logo-small.png'; // Add your small mobile logo here
+  
+  function updateNavbar() {
+    const scrollY = window.scrollY;
+    const isMobile = window.innerWidth <= 768;
+    
+    if (scrollY > 50) {
+      navbar.classList.add('scrolled');
+      // Change logo when scrolled
+      if (isMobile) {
+        logo.src = scrolledMobileLogo;
+      } else {
+        logo.src = scrolledDesktopLogo;
+      }
+    } else {
+      navbar.classList.remove('scrolled');
+      // Restore original logo
+      if (isMobile) {
+        logo.src = mobileLogo;
+      } else {
+        logo.src = desktopLogo;
+      }
+    }
+  }
+  
+  // Function to set correct logo based on screen size
+  function setCorrectLogo() {
+    const isMobile = window.innerWidth <= 768;
+    const isScrolled = navbar.classList.contains('scrolled');
+    
+    if (isScrolled) {
+      logo.src = isMobile ? scrolledMobileLogo : scrolledDesktopLogo;
+    } else {
+      logo.src = isMobile ? mobileLogo : desktopLogo;
+    }
+  }
+  
+  // Event listeners
+  window.addEventListener('scroll', updateNavbar);
+  window.addEventListener('resize', setCorrectLogo);
+  
+  // Initial setup
+  updateNavbar();
+  setCorrectLogo();
+});
+</script>
 <section class="cta-section d-flex align-items-center">
   <div class="container">
            <nav class="breadcrumb">
