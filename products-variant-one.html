@@ -442,6 +442,71 @@ flex-direction: row-reverse;       /* left to right */
   color: #DA2E2E;
   text-decoration: none;
 }
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+.custom-card {
+        flex-direction: column;
+        text-align: center;
+        width: 250px !important;
+        height: 600px !important;
+        padding: 20px;
+        margin: 0 auto;
+    }
+.link-icon {
+    width: 20px !important;
+    height: 20px !important;
+}
+.cta-section {
+  background-color: #DA2E2E;
+  
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 0px;
+}
+  .card-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .card-content {
+    text-align: center;
+  }
+
+  .card-footer,
+  .bottom-icon {
+    text-align: center;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-subtitle,
+  .card-list li {
+    font-size: 14px;
+  }
+
+  .text-link {
+    font-size: 16px;
+  }
+
+  .card-grid-section {
+    margin-left: 0;  /* remove fixed margin */
+    margin-top: 20px;
+    padding: 0 15px;
+            padding-bottom: 100px;
+
+  }
+
+  .cta-titles {
+    margin-left: 0;
+   font-size: 24px;
+    padding-top: 24px !important;
+  }
+}
+
 </style>
 
 <section class="client-section">
@@ -464,22 +529,73 @@ flex-direction: row-reverse;       /* left to right */
 
 
 <style>
+@media (max-width: 767px) {
+  .client-section {
+    width: 440px !important;
+    height: 180px !important;
+    margin: 0 auto !important;
+      padding-right: 20px !important;
+    padding-left: 10px !important;
     
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .client-section .container {
+    padding-right: 20px !important;
+    padding-left: 0px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .client-left {
+    max-width: 50% !important;
+  }
+
+  .client-title {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .client-btn {
+    font-size: 12px !important;
+    padding: 8px 16px !important;
+  }
+
+  .client-right {
+    position: relative !important;
+    right: 0 !important;
+    top: 0 !important;
+  }
+
+  .client-img {
+    width: 164px !important;
+    height: 268px !important;
+    margin-left: 10px !important;
+    object-fit: contain !important;
+    margin-top: -85px;
+  }
+}
+
 .client-section {
   position: relative;
   width: 100%;
-  height: 208px;
-  margin-top: 50px;
+  height: 278px;
   background-color: #DA2E2E;
   display: flex;
   align-items: center;
   overflow: visible; /* allows image overlap */
+  margin-top: 100px;
 }
 
 .client-section .container {
-  /* max-width: 1728px;
+  max-width: 1728px;
   margin: 0 auto;
-  padding: 0 125px; */
+  padding: 0 125px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -527,36 +643,13 @@ flex-direction: row-reverse;       /* left to right */
 }
 
 .client-img {
-    width: 244px;
-    height: 308px;
-    margin-top: -40px;
-    object-fit: contain;
+  width: 244px;
+  height: 338px;
+  object-fit: contain;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .client-section {
-    height: auto;
-    padding: 60px 20px;
-    text-align: center;
-  }
 
-  .client-section .container {
-    flex-direction: column;
-  }
-
-  .client-right {
-    position: relative;
-    right: auto;
-    top: auto;
-    margin-top: 20px;
-  }
-
-  .client-img {
-    width: 180px;
-    height: auto;
-  }
-}
 </style>
+
 </body>
 </html>

@@ -262,11 +262,26 @@
   .know-more-btn {
     width: 100%;
     justify-content: center;
+    gap: 8px !important;
   }
   .bottom-icon img {
-    width: 100%;
-    height: auto;
+    width: 20px;
+    height: 20px;
   }
+  .text-link
+
+ {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #DA2E2E;
+    text-decoration: none;
+    display: inline-flex
+;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
 }
 </style>
 
@@ -473,6 +488,52 @@
   color: #DA2E2E;
   text-decoration: none;
 }
+/* 📱 Mobile: Show 2 cards per row */
+@media (max-width: 768px) {
+  .card-grid-section .row {
+    display: flex;
+    flex-wrap: wrap;
+ 
+    gap: 15px; /* spacing between cards */
+  }
+
+  .card-grid-section .col-8 {
+    flex: 0 0 48%;   /* 2 cards in a row */
+    max-width: 48%;
+  }
+
+  .custom-card {
+    width: 300px !important;
+    height: 650px !important;
+  }
+
+  .card-img {
+    width: 180px !important;
+    height: 200px !important;
+  }
+
+  .cta-titles {
+    margin-left: 0;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 24px;
+  }
+
+  .card-grid-section {
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 0 10px;
+    margin-bottom: 50px;
+  }
+  .cta-section {
+    background-color: #DA2E2E;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding-bottom:0px;
+}
+}
+
 </style>
 </body>
 </html>
