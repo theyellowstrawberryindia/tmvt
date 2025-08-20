@@ -2383,15 +2383,19 @@ body.no-scroll {
     margin: 0 0 4px 0;
   }
 
-  .network-text {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 1.4;
-    color: #666;
-    margin: 0;
-    word-break: break-word;
-  }
+ .network-text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #666 !important;
+  margin: 0;
+  word-break: break-word;
+
+  text-decoration: none !important;  /* remove underline */
+  pointer-events: none;              /* disable click */
+  cursor: default;                   /* show normal cursor */
+}
 
   .network-map {
     max-width: 309px;
