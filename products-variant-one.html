@@ -10,652 +10,85 @@
 
   <!-- Google Fonts: Manrope -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section class="cta-section d-flex align-items-center">
-  <div class="container">
-        
-    <div class="row align-items-center">
-      <div class="col-12 text-white">
-        <h2 class="cta-titles">Discover Product Variants</h2>
-        <!-- <p class="cta-subtext">Engineered for Performance. Trusted Across Industries.</p> -->
+<div class="pv2-page">
+  <section class="pv2-cta-section d-flex align-items-center">
+    <div class="container">
+      <nav class="pv2-breadcrumb">
+        <img src="assets/polygon.png" alt=">" class="pv2-breadcrumb-icon">
+        <a href="index.html">Home</a> 
+        <img src="assets/polygon.png" alt=">" class="pv2-breadcrumb-icon">
+        <a href="product-page.html">Products</a>
+        <img src="assets/polygon.png" alt=">" class="pv2-breadcrumb-icon">
+        <a href="roots-blower.html">Root Blowers</a>
+      </nav>
+      <div class="row align-items-center">
+        <div class="col-12 text-white">
+          <h2 class="pv2-cta-title">Discover Product Variants</h2>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CARDS -->
-<section class="card-grid-section">
-  <div class="container">
-    <div class="row g-0">
+  <!-- CARDS -->
+  <section class="pv2-card-grid-section">
+    <div class="container">
+      <div class="row g-0">
+        <!-- Custom Card -->
+        <div class="col-8 col-md-6 col-lg-4">
+          <div class="pv2-custom-card">
+            <img src="assets/product-1.svg" alt="Blower" class="pv2-card-img">
+            <div class="pv2-card-content">
+              <h3 class="pv2-card-title">Three Lobe Roots Blowers</h3>
+              <p class="pv2-card-subtitle">Airflow up to 60,000m³/hr, pressure up to 1 bar.</p>
+              <ul class="pv2-card-list">
+                <li>Pressure range: Up to 1 bar (g)</li>
+                <li>Heavy-duty cast iron casing with robust tri-lobe rotors</li>
+                <li>Reduced pulsations and noise levels</li>
+              </ul>
+              <!-- Know More Link -->
+              <div class="pv2-card-footer">
+                <a href="#" class="pv2-text-link">
+                  3 Series
+                  <img src="assets/arrow-right-red.png" alt="Arrow Icon" class="pv2-link-icon">
+                </a>
+              </div>
+              <!-- Download Brochure Link -->
+              <div class="pv2-bottom-icon">
+                <a href="#" class="pv2-text-link">
+                  Download Brochure
+                  <img src="assets/download.svg" alt="Arrow Icon" class="pv2-link-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <!-- Custom Card -->
-  <div class="col-8 col-md-6 col-lg-4 ">
-<div class="custom-card">
-  <img src="assets/product-1.svg" alt="Blower" class="card-img">
-
-  <div class="card-content">
-    <h3 class="card-title">Three Lobe Roots Blowers</h3>
-    <p class="card-subtitle">Airflow up to 60,000m³/hr, pressure up to 1 bar.</p>
-    <ul class="card-list">
-      <li>Pressure range: Up to 1 bar (g)</li>
-      <li>Heavy-duty cast iron casing with robust tri-lobe rotors</li>
-      <li>Reduced pulsations and noise levels</li>
-    </ul>
-    <!-- Know More Link -->
-  <div class="card-footer">
-    <a href="#" class="text-link">
-      3 Series
-      <img src="assets/arrow-right-red.png" alt="Arrow Icon" class="link-icon">
-    </a>
-  </div>
-
-  <!-- Download Brochure Link -->
-  <div class="bottom-icon">
-    <a href="#" class="text-link">
-      Download Brochure
-      <img src="assets/download.svg" alt="Arrow Icon" class="link-icon">
-    </a>
-  </div>
-  </div>
+  <section class="pv2-client-section">
+    <div class="container">
+      <!-- Left Content -->
+      <div class="pv2-client-left">
+        <h2 class="pv2-client-title">
+          Not Sure Which Product Fits You Best? Don’t Worry,<br>
+          I’ll Guide You to Reach Out to Our Sales Team Today!
+        </h2>
+        <a href="#" class="pv2-client-btn">Get Personal Assistance</a>
+      </div>
+      <!-- Right Image -->
+      <div class="pv2-client-right">
+        <img src="assets/client.png" alt="Client" class="pv2-client-img">
+      </div>
+    </div>
+  </section>
 </div>
 
 
-      </div>
-
-       
-    </div>
-  </div>
-</section>
-
-<style>
-  html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevents right-side scrolling */
-  width: 100%;
-}
-    .card-footer,
-.bottom-icon {
-  text-align: center;   /* centers inline elements like links */
-  margin-top: 10px;
-}
-
-.text-link {
-  justify-content: center;  /* centers text + icon together */
-}
-
-    body{
-        background-color: #000000;
-    }
-.card-row {
-  display: flex;
-  justify-content: center; /* keeps them centered */
-  gap: 20px; /* only gap between cards */
-}
-.card-grid-section .col-12 {
-  padding-left: 5px !important;
-  padding-right: 5px !important;
-}
-/* --- Custom Card --- */
-.custom-card {
-  width: 752px;
-  height: 410px;
-  background: #fff;
-  border: 1px solid #ddd;
-
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  padding: 30px;
-
-  display: flex;              /* make horizontal */
-flex-direction: row-reverse;       /* left to right */
-  align-items: center;        /* vertically center */
-  justify-content: space-between; /* keep spacing */
-  gap: 30px;                  /* space between text + image */
-}
-
-
-
-/* Card Image */
-.card-img {
-  width: 344px;
-  height: 215px;
-  object-fit: cover;
-  margin: 0 auto 20px;
-  display: block;
-  opacity: 1;
-}
-
-/* Heading */
-.card-title {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-
-  font-size: 18px;
-  line-height: 150%;
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-/* Subtitle */
-.card-subtitle {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 14px;
-  line-height: 150%;
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-/* Description Text */
-.card-text {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 16px;
-  line-height: 150%;
-  text-align: center;
-  margin-bottom: 15px;
-  color: #555;
-}
-
-/* List */
-.card-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-bottom: 20px;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  text-align: left;
-}
-
-.card-list li {
-  margin-bottom: 5px;
-    line-height: 150%;
-}
-
-/* Know More Button */
-.know-more-btn {
-  width: 120px;
-  height: 37px;
-  border: 1px solid #DA2E2E;
-  background-color: #DA2E2E;
-  color: #fff;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-/* Button Icon */
-.btn-icon {
-  width: 20px;
-  height: 20px;
-}
-
-/* Bottom Icon */
-
-/* Text Links with Icon */
-.text-link {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  color: #DA2E2E;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px; /* space between text and icon */
-  margin-top: 10px;
-}
-
-.text-link:hover {
-  text-decoration: underline;
-}
-
-.link-icon {
-  width: 20px;
-  height: 20px;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  .custom-card {
-    width: 100%;
-    height: auto;
-  }
-  .card-img {
-    width: 100%;
-    height: auto;
-  }
-  .know-more-btn {
-    width: 100%;
-    justify-content: center;
-  }
-  .bottom-icon img {
-    width: 100%;
-    height: auto;
-  }
-}
-</style>
-
-
-<style>
-/* --- Red Section --- */
-
-  .breadcrumb {
-  display: flex;
-  align-items: center;   /* centers text + icon vertically */
-  gap: 15px;              /* space between items */
-  margin-bottom: 20px;
-}
-
-.breadcrumb a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.breadcrumb a:hover {
-  text-decoration: underline; /* small hover effect */
-}
-
-.breadcrumb-icon {
-  width: 8px;
-  height: 8px;
-  display: inline-block;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-.cta-section {
-  background-color: #DA2E2E;
-  
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  padding-bottom: 120px;
-}
-.cta-title {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 32px;
-  
-  line-height: 100%;
-  text-transform: capitalize;
-  margin-bottom: 1.5rem;
-}
-.cta-titles {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-      margin-left: 100px;
-  font-size: 32px;
-  padding-top: 100px;
-  line-height: 100%;
-  text-transform: capitalize;
-  margin-bottom: 1.5rem;
-}
-.cta-subtext {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 100%;
-  margin: 0;
-}
-
-/* --- Card Section --- */
-.card-grid-section {
-  margin-top: -100px;
-  position: relative;
-  z-index: 2;
-  margin-left: 300px;
-  padding-bottom: 50px;
-}
-
-/* Card */
-
-.card-img {
-  width: 100%;
-  height: 215px;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.card-subtext {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  margin: 0.5rem 0 1rem;
-  color: #333;
-}
-.card-text {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 1.5rem;
-}
-.view-more {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  color: #DA2E2E;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-.view-arrow {
-  width: 20px;
-  height: 20px;
-}
-</style>
-
-
-<style>
-/* Background */
-.hero-bg {
-  width: 100%;
-  height: 400px;
-  background: #d32222;
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-/* Breadcrumbs */
-.breadcrumbs {
-  position: absolute;
-  top: 40px;
-  left: 23%;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 100%;
-  color: #DA2E2E;
-}
-.breadcrumbs a {
-  color: #DA2E2E;
-  text-decoration: none;
-}
-.breadcrumbs span {
-  color: #DA2E2E;
-}
-
-/* Polygon Image */
-.polygon-img {
-  position: absolute;
-  top: 60px;
-  left: 18%;
-  width: 60px;
-  height: auto;
-}
-
-/* Title */
-.hero-title {
-  position: absolute;
-  top: 100px;
-  left: 18%;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 100%;
-  color: #fff;
-  text-transform: capitalize;
-}
-
-/* Subtitle */
-.hero-subtitle {
-  position: absolute;
-  top: 170px;
-  left: 18%;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 100%;
-  color: #fff;
-}
-
-/* Cards */
-.cards-row {
-  margin-top: -150px; /* overlap cards on red section */
-}
-
-.custom-card .card-img {
-  width: 344px;
-  height: 315px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.custom-card .card-desc {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-.custom-card .card-link {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: #DA2E2E;
-  text-decoration: none;
-}
-/* 📱 Mobile Responsive */
-@media (max-width: 768px) {
-.custom-card {
-        flex-direction: column;
-        text-align: center;
-        width: 340px !important;
-        height: 600px !important;
-        padding: 20px;
-        margin: 0 auto;
-    }
-.link-icon {
-    width: 20px !important;
-    height: 20px !important;
-}
-.cta-section {
-  background-color: #DA2E2E;
-  
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  padding-bottom: 0px;
-}
-  .card-img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
-
-  .card-content {
-    text-align: center;
-  }
-
-  .card-footer,
-  .bottom-icon {
-    text-align: center;
-  }
-
-  .card-title {
-    font-size: 16px;
-  }
-
-  .card-subtitle,
-  .card-list li {
-    font-size: 14px;
-  }
-
-  .text-link {
-    font-size: 16px;
-  }
-
-  .card-grid-section {
-    margin-left: 0;  /* remove fixed margin */
-    margin-top: 20px;
-    padding: 0 15px;
-            padding-bottom: 100px;
-
-  }
-
-  .cta-titles {
-    margin-left: 0;
-   font-size: 24px;
-    padding-top: 24px !important;
-  }
-}
-
-</style>
-
-<section class="client-section">
-  <div class="container">
-    <!-- Left Content -->
-    <div class="client-left">
-      <h2 class="client-title">
-        Not Sure Which Product Fits You Best? Don’t Worry,<br>
-        I’ll Guide You Reach Out To Our Sales Team Today!
-      </h2>
-      <a href="#" class="client-btn">Get Personal Assistance</a>
-    </div>
-
-    <!-- Right Image -->
-    <div class="client-right">
-      <img src="assets/client.png" alt="Client" class="client-img">
-    </div>
-  </div>
-</section>
-
-
-<style>
-@media (max-width: 767px) {
-  .client-section {
-    width: 440px !important;
-    height: 180px !important;
-    margin: 0 auto !important;
-      padding-right: 20px !important;
-    padding-left: 10px !important;
-    
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-  }
-
-  .client-section .container {
-    padding-right: 20px !important;
-    padding-left: 0px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-  }
-
-  .client-left {
-    max-width: 50% !important;
-  }
-
-  .client-title {
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    margin-bottom: 10px !important;
-  }
-
-  .client-btn {
-    font-size: 12px !important;
-    padding: 8px 16px !important;
-  }
-
-  .client-right {
-    position: relative !important;
-    right: 0 !important;
-    top: 0 !important;
-  }
-
-  .client-img {
-    width: 164px !important;
-    height: 268px !important;
-    margin-left: 10px !important;
-    object-fit: contain !important;
-    margin-top: -85px;
-  }
-}
-
-.client-section {
-  position: relative;
-  width: 100%;
-  height: 278px;
-  background-color: #DA2E2E;
-  display: flex;
-  align-items: center;
-  overflow: visible; /* allows image overlap */
-  margin-top: 100px;
-}
-
-.client-section .container {
-  max-width: 1728px;
-  margin: 0 auto;
-  padding: 0 125px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Left content */
-.client-left {
-  max-width: 987px;
-}
-
-.client-title {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.4;
-  color: #FAFAFA;
-  margin-bottom: 20px;
-}
-
-.client-btn {
-  display: inline-block;
-  padding: 16px 32px;
-  background-color: #FAFAFA;
-  color: #DA2E2E;
-  font-family: 'Manrope', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.client-btn:hover {
-  background-color: #fff;
-  color: #b32222;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Right image */
-.client-right {
-  position: absolute;
-  right: 80px;
-  top: -60px; /* overlaps only from top */
-}
-
-.client-img {
-  width: 244px;
-  height: 338px;
-  object-fit: contain;
-}
-
-
-</style>
+<script src="main.js"></script>
 
 </body>
 </html>
