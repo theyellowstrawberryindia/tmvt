@@ -15,6 +15,13 @@
     body{
         overflow-x: hidden;
     }
+    
+  </style>
+</head>
+<body>
+
+
+<style>
     /* Requirement bar */
     .requirement-bar {
       background-color: #FAFAFA;
@@ -32,7 +39,14 @@
       color: #000;
       margin: 0;
     }
-
+.inquire-text {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: red;
+      margin: 0;
+    }
     .arrow-icon {
       width: 24px;
       height: 24px;
@@ -117,13 +131,126 @@
     .quote-btn:hover {
       background-color: #b32222;
     }
+    /* Mobile responsive styles */
+@media (max-width: 768px) {
+/* Requirement Bar */
+  .requirement-bar {
+    width: 100%;
+    max-width: 440px;
+    height: 30px;
+    /* margin: 24px auto 0; */
+    padding: 0 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .requirement-text,
+  .inquire-text {
+    font-size: 9px;
+    line-height: 100%;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .arrow-icon {
+
+    margin: 0 6px;
+  }
+
+  /* Navbar */
+  .custom-navbar {
+    height: 70px;
+  
+  }
+  .inquire-text{
+  color: red;
+}
+  .navbar-logo {
+    content: url("assets/mobile-logo.png");
+
+            width: 60px;
+        height: auto;
+  }
+  .custom-navbar .container {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Replace logo with mobile version */
+  .navbar-logo {
+    content: url('assets/mobile-logo.png');
+    width: 60px;
+    height: 60px;
+  }
+  .quote-btn {
+    width: auto;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .menu-btn img {
+    width: 20px;
+    height: 20px;
+  }
+  /* Hide desktop nav links */
+  .custom-navbar .nav {
+    display: none;
+  }
+
+
+
+  
+}
+@media (max-width: 768px) {
+  .menu-btn {
+    border: none !important;      
+    outline: none !important;     
+    background: transparent !important; 
+    /* adjust padding for mobile */
+    width: auto !important;        /* ensures button isn’t too wide */
+    height: 40px !important;       /* proper touch-friendly height */
+    font-size: 16px !important;    /* adjust text/icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+    .menu-btn img {
+    width: 32px !important;  /* adjust width for mobile */
+    height: 32px !important; /* maintain aspect ratio */
+    object-fit: contain;     /* prevent stretching */
+  }
+}/* Desktop: hide mobile controls */
+.mobile-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop nav */
+  .custom-navbar .nav {
+    display: none;
+  }
+
+  /* Show mobile controls */
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
 
 
   </style>
-</head>
-<body>
-
-    <div class="requirement-bar">
+  <!-- Requirement Bar -->
+  <div class="requirement-bar">
     <div class="container d-flex align-items-center justify-content-center">
       <p class="requirement-text text-center text-md-start">
         Have a Requirement in Mind? Send Us Your Inquiry
@@ -132,7 +259,6 @@
       <p class="inquire-text">Inquire Now</p>
     </div>
   </div>
-
   <!-- Navbar -->
   <!-- Navbar -->
 <nav class="custom-navbar">
@@ -180,22 +306,97 @@
   </div>
 </nav>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
+  });
+</script>
+
+
 <style>
-/* Default mobile nav - hidden */
-.mobile-nav {
+ /* Requirement bar */
+.requirement-bar {
+  background-color: #FAFAFA;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  position: relative; /* stays normal at top initially */
+  z-index: 1500;
+}
+.custom-navbar.scrolled .navbar-logo {
+  content: url("assets/mobile-logo.png");
+        height: 60px !important;
+    width: auto !important;
+}
+/* Hidden state on scroll */
+.requirement-bar.hidden {
   display: none;
-  position: fixed;
+}
+
+/* Navbar styles */
+.custom-navbar {
+  position: relative; /* default: normal flow */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  background: white;
+  z-index: 2000;
+  transition: all 0.3s ease-in-out;
+  padding: 0.8rem 0;
+}
+
+/* Default navbar state */
+.custom-navbar .navbar-logo {
+  transition: all 0.3s ease-in-out;
+  
+}
+
+/* When sticky */
+.custom-navbar.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.custom-navbar.scrolled .navbar-logo {
+  content: url("assets/mobile-logo.png");
+        height: 80px;
+    width: 88px;
+}
+
+
+/* Default mobile nav - hidden */
+/* Default mobile nav - hidden */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%; /* start off-screen */
+  width: 100%;
+  height: 100vh;
   background-color: #d32222;
   color: #fff;
   text-align: center;
   z-index: 1000;
   padding-top: 3rem;
-  overflow: hidden; /* Prevent scrolling inside */
+  overflow: hidden;
+  transition: left 0.3s ease-in-out; /* smooth slide */
 }
+
+/* Show nav */
+.mobile-nav.active {
+  left: 0; /* slides into view */
+}
+
 
 body.no-scroll {
   height: 100vh;
@@ -214,6 +415,7 @@ body.no-scroll {
 
 .mobile-nav a {
   color: #fff;
+  font-family: 'Manrope', sans-serif;
   text-decoration: none;
   font-size: 1.5rem;
   display: block;
@@ -238,101 +440,42 @@ body.no-scroll {
 .mobile-nav.active {
   display: block;
 }
-@media (max-width: 768px) {
 
-  /* Requirement Bar */
-  .requirement-bar {
-    width: 100%;
-    max-width: 440px;
-    height: 30px;
-    margin: 24px auto 0;
-    padding: 0 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .requirement-text,
-  .inquire-text {
-    font-size: 9px;
-    line-height: 100%;
-    font-weight: 400;
-    text-align: center;
-  }
-
-  .arrow-icon {
-    width: 24px;
-    height: 24px;
-    margin: 0 6px;
-  }
-
-  /* Navbar */
-  .custom-navbar {
-    height: 70px;
-  
-  }
-.inquire-text{
-  color: red;
-}
-  .navbar-logo {
-    content: url("assets/mobile-logo.png");
-
-            width: 60px;
-        height: auto;
-  }
-
-  .custom-navbar .nav {
-    display: none; /* hide desktop nav links */
-  }
-
-  .quote-btn {
-    width: auto;
-    height: 32px;
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .mobile-controls {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .menu-btn img {
-    width: 20px;
-    height: 20px;
-  }
-
-}
 /* Disable body scrolling when menu is active */
-@media (max-width: 768px) {
-  .menu-btn {
-    border: none !important;      
-    outline: none !important;     
-    background: transparent !important; 
-    /* adjust padding for mobile */
-    width: auto !important;        /* ensures button isn’t too wide */
-    height: 40px !important;       /* proper touch-friendly height */
-    font-size: 16px !important;    /* adjust text/icon size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-    .menu-btn img {
-    width: 32px !important;  /* adjust width for mobile */
-    height: 32px !important; /* maintain aspect ratio */
-    object-fit: contain;     /* prevent stretching */
-  }
 
-
-}
-@media (max-width: 768px) {
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }}
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".custom-navbar");
+    const requirementBar = document.querySelector(".requirement-bar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        // Hide requirement bar
+        requirementBar.classList.add("hidden");
+        // Stick navbar
+        navbar.classList.add("scrolled");
+      } else {
+        // Show requirement bar again
+        requirementBar.classList.remove("hidden");
+        // Reset navbar
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
+  });
+</script>
+
+
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.querySelector(".menu-btn");
@@ -411,8 +554,8 @@ body.no-scroll {
 }
 
 .floating-product img {
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 120%;
   object-fit: cover; /* maintain aspect ratio */
   background: #fff;
 }
@@ -484,14 +627,7 @@ body.no-scroll {
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
-.cta-section {
-  background-color: #DA2E2E;
-  height: 300px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  padding-bottom: 120px;
-}
+
 .cta-title {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
@@ -554,7 +690,9 @@ body.no-scroll {
   font-weight: 600;
   font-size: 20px;
   color: #DA2E2E;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;;
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
@@ -726,7 +864,7 @@ body.no-scroll {
     .solutions-section {
   width: 100%;               /* full width */
         /* optional max width */
-  height: 146px;             /* fixed height */
+  height: 106px;             /* fixed height */
   background-color: #DA2E2E;
   display: flex;
   align-items: center;       /* vertical center */
@@ -749,7 +887,7 @@ body.no-scroll {
 </style>
 <section class="industry-section">
   <div class="industry-left">
-    <img src="assets/factory.svg" alt="Industry" class="industry-img">
+    <img src="assets/factory.webp" alt="Industry" class="industry-img">
   </div>
 
   <div class="industry-right">
@@ -1002,7 +1140,7 @@ body.no-scroll {
 }
 .cta-section {
   background-color: #DA2E2E;
-  height: 400px;
+  height: 300px;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -1032,10 +1170,10 @@ body.no-scroll {
 }
 /* --- Card Section --- */
 .card-grid-section {
-  margin-top: -100px;
+  margin-top: -200px;
   position: relative;
   z-index: 2;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 /* Card */
@@ -1076,16 +1214,7 @@ body.no-scroll {
   color: #555;
   /* margin-bottom: 1.5rem; */
 }
-.view-more {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  color: #DA2E2E;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
+
 .view-arrow {
   width: 20px;
   height: 20px;
@@ -1175,9 +1304,12 @@ body.no-scroll {
    
     overflow: hidden !important; /* avoid overflow */
   }
-  .view-more {
-    font-size: 10px !important;
-  }
+.view-more {
+  font-size: 12px !important;
+  white-space: nowrap;   /* prevent text from breaking into two lines */
+  display: inline-block; 
+  padding-bottom: 0px;/* ensures nowrap works properly */
+}
 
   .view-arrow {
     width: 16px !important;
@@ -1260,7 +1392,7 @@ body.no-scroll {
 }
 .custom-card {
   width: 360px;
-  height: 421px;
+  height: 481px;
   border: 1px solid #eee;
   background: #fff;
   text-align: center;
@@ -1536,9 +1668,9 @@ body.no-scroll {
 }
 
 .why-choose-us .reasons li {
-  font-family: 'Work Sans', sans-serif;
+   font-family: 'Manrope', sans-serif;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.4;
   margin-bottom: 40px;
   color: #333333;
@@ -1606,6 +1738,28 @@ body.no-scroll {
 
   justify-content: center;
 }
+/* ✨ Initial hidden state */
+.help-heading,
+.help-box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ✨ When in view */
+.help-heading.animate,
+.help-box.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add a stagger effect for boxes */
+.help-box:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.help-box:nth-child(2) {
+  transition-delay: 0.4s;
+}
 
 .help-container {
   display: flex;
@@ -1642,6 +1796,7 @@ body.no-scroll {
   flex-direction: column;
   justify-content: space-between;
   background-color: transparent;
+  transition: all 0.3s ease;
 }
 .help-box span{
     font-size: 18px;
@@ -1760,8 +1915,41 @@ body.no-scroll {
     line-height: 1.2;
   }
 }
+.help-box:hover {
+
+ 
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: #fff;
+    /* Add smooth + fast transition */
+  transition: all 0.3s ease-in-out; 
+}
+
+/* Ensure child elements also change color nicely */
+.help-box:hover .help-title span,
+.help-box:hover p {
+
+  transition: color 0.1s ease-in-out;
+}
+
 
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    // Watch heading + boxes
+    document.querySelectorAll(".help-heading, .help-box").forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
 <div class="space"></div>
 
 <section class="faq-cta-section">
@@ -2054,7 +2242,7 @@ hr {
                 margin: 0 auto;
             }
 
-            .footer-resources-grid .footer-subtitle {
+            .footer-resources-grid  {
                 font-size: 14px !important;
                 font-weight: 500;
                 color: #000;
@@ -2228,8 +2416,12 @@ hr {
         }
 
         .footer-subtitle {
-            font-weight: 300;
-            font-size: 20px;
+           font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
             margin: 0 !important;
             grid-column: 1;
             grid-row: 1;

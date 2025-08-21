@@ -12,7 +12,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap" rel="stylesheet">
 
  
-  <style>
+  
+</head>
+<body>
+<style>
     /* Requirement bar */
     .requirement-bar {
       background-color: #FAFAFA;
@@ -30,7 +33,14 @@
       color: #000;
       margin: 0;
     }
-
+.inquire-text {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: red;
+      margin: 0;
+    }
     .arrow-icon {
       width: 24px;
       height: 24px;
@@ -117,34 +127,44 @@
     }
     /* Mobile responsive styles */
 @media (max-width: 768px) {
-  /* Requirement Bar */
+/* Requirement Bar */
   .requirement-bar {
-    width: 440px;
+    width: 100%;
+    max-width: 440px;
     height: 30px;
-    margin: 0 auto;
-    padding: 0 10px;
-            padding-top: 20px;
-  }
-  .requirement-bar .container {
-    flex-direction: row;
+    /* margin: 24px auto 0; */
+    padding: 0 8px;
+    display: flex;
     justify-content: center;
-    /* gap: 8px; */
+    align-items: center;
   }
+
   .requirement-text,
   .inquire-text {
-    font-size: 14px;
+    font-size: 9px;
+    line-height: 100%;
+    font-weight: 400;
+    text-align: center;
   }
+
   .arrow-icon {
-    width: 16px;
-    height: 16px;
+
+    margin: 0 6px;
   }
 
   /* Navbar */
   .custom-navbar {
-   
-    height: 80px;
-    margin: 0 auto;
-    /* padding: 0 12px; */
+    height: 70px;
+  
+  }
+  .inquire-text{
+  color: red;
+}
+  .navbar-logo {
+    content: url("assets/mobile-logo.png");
+
+            width: 60px;
+        height: auto;
   }
   .custom-navbar .container {
     justify-content: space-between;
@@ -157,32 +177,51 @@
     width: 60px;
     height: 60px;
   }
+  .quote-btn {
+    width: auto;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .menu-btn img {
+    width: 20px;
+    height: 20px;
+  }
   /* Hide desktop nav links */
   .custom-navbar .nav {
     display: none;
   }
 
-  /* Get a Quote button (mobile size) */
-  .quote-btn {
-    width: 103px;
-    height: 32px;
-    padding: 8px 12px;
-    font-size: 14px;
-    margin-right: 8px;
-  }
 
-  /* Mobile menu button */
-  .menu-btn {
-    background: none;
-    border: none;
-    padding: 0;
-  }
-  .menu-btn img {
-    width: 24px;
-    height: 24px;
-  }
+
   
+}
+@media (max-width: 768px) {
+  .menu-btn {
+    border: none !important;      
+    outline: none !important;     
+    background: transparent !important; 
+    /* adjust padding for mobile */
+    width: auto !important;        /* ensures button isn’t too wide */
+    height: 40px !important;       /* proper touch-friendly height */
+    font-size: 16px !important;    /* adjust text/icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+    .menu-btn img {
+    width: 32px !important;  /* adjust width for mobile */
+    height: 32px !important; /* maintain aspect ratio */
+    object-fit: contain;     /* prevent stretching */
+  }
 }/* Desktop: hide mobile controls */
 .mobile-controls {
   display: none;
@@ -204,10 +243,6 @@
 
 
   </style>
-</head>
-<body>
-
-  <!-- Requirement Bar -->
   <!-- Requirement Bar -->
   <div class="requirement-bar">
     <div class="container d-flex align-items-center justify-content-center">
@@ -218,7 +253,6 @@
       <p class="inquire-text">Inquire Now</p>
     </div>
   </div>
-
   <!-- Navbar -->
   <!-- Navbar -->
 <nav class="custom-navbar">
@@ -266,22 +300,97 @@
   </div>
 </nav>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
+  });
+</script>
+
+
 <style>
-/* Default mobile nav - hidden */
-.mobile-nav {
+ /* Requirement bar */
+.requirement-bar {
+  background-color: #FAFAFA;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  position: relative; /* stays normal at top initially */
+  z-index: 1500;
+}
+.custom-navbar.scrolled .navbar-logo {
+  content: url("assets/mobile-logo.png");
+        height: 60px !important;
+    width: auto !important;
+}
+/* Hidden state on scroll */
+.requirement-bar.hidden {
   display: none;
-  position: fixed;
+}
+
+/* Navbar styles */
+.custom-navbar {
+  position: relative; /* default: normal flow */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  background: white;
+  z-index: 2000;
+  transition: all 0.3s ease-in-out;
+  padding: 0.8rem 0;
+}
+
+/* Default navbar state */
+.custom-navbar .navbar-logo {
+  transition: all 0.3s ease-in-out;
+  
+}
+
+/* When sticky */
+.custom-navbar.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.custom-navbar.scrolled .navbar-logo {
+  content: url("assets/mobile-logo.png");
+        height: 80px;
+    width: 88px;
+}
+
+
+/* Default mobile nav - hidden */
+/* Default mobile nav - hidden */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%; /* start off-screen */
+  width: 100%;
+  height: 100vh;
   background-color: #d32222;
   color: #fff;
   text-align: center;
   z-index: 1000;
   padding-top: 3rem;
-  overflow: hidden; /* Prevent scrolling inside */
+  overflow: hidden;
+  transition: left 0.3s ease-in-out; /* smooth slide */
 }
+
+/* Show nav */
+.mobile-nav.active {
+  left: 0; /* slides into view */
+}
+
 
 body.no-scroll {
   height: 100vh;
@@ -300,6 +409,7 @@ body.no-scroll {
 
 .mobile-nav a {
   color: #fff;
+  font-family: 'Manrope', sans-serif;
   text-decoration: none;
   font-size: 1.5rem;
   display: block;
@@ -324,101 +434,42 @@ body.no-scroll {
 .mobile-nav.active {
   display: block;
 }
-@media (max-width: 768px) {
 
-  /* Requirement Bar */
-  .requirement-bar {
-    width: 100%;
-    max-width: 440px;
-    height: 30px;
-    margin: 24px auto 0;
-    padding: 0 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .requirement-text,
-  .inquire-text {
-    font-size: 9px;
-    line-height: 100%;
-    font-weight: 400;
-    text-align: center;
-  }
-
-  .arrow-icon {
-    width: 24px;
-    height: 24px;
-    margin: 0 6px;
-  }
-
-  /* Navbar */
-  .custom-navbar {
-    height: 70px;
-  
-  }
-.inquire-text{
-  color: red;
-}
-  .navbar-logo {
-    content: url("assets/mobile-logo.png");
-
-            width: 60px;
-        height: auto;
-  }
-
-  .custom-navbar .nav {
-    display: none; /* hide desktop nav links */
-  }
-
-  .quote-btn {
-    width: auto;
-    height: 32px;
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .mobile-controls {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .menu-btn img {
-    width: 20px;
-    height: 20px;
-  }
-
-}
 /* Disable body scrolling when menu is active */
-@media (max-width: 768px) {
-  .menu-btn {
-    border: none !important;      
-    outline: none !important;     
-    background: transparent !important; 
-    /* adjust padding for mobile */
-    width: auto !important;        /* ensures button isn’t too wide */
-    height: 40px !important;       /* proper touch-friendly height */
-    font-size: 16px !important;    /* adjust text/icon size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-    .menu-btn img {
-    width: 32px !important;  /* adjust width for mobile */
-    height: 32px !important; /* maintain aspect ratio */
-    object-fit: contain;     /* prevent stretching */
-  }
 
-
-}
-@media (max-width: 768px) {
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }}
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".custom-navbar");
+    const requirementBar = document.querySelector(".requirement-bar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        // Hide requirement bar
+        requirementBar.classList.add("hidden");
+        // Stick navbar
+        navbar.classList.add("scrolled");
+      } else {
+        // Show requirement bar again
+        requirementBar.classList.remove("hidden");
+        // Reset navbar
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
+  });
+</script>
+
+
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.querySelector(".menu-btn");
@@ -460,7 +511,7 @@ body.no-scroll {
   /* Mobile styles */
 @media (max-width: 768px) {
   .services-header {
-            margin-top: 20px;
+            /* margin-top: 20px; */
     width: 440px;
     max-width: 100%; /* prevent overflow on small screens */
   padding: 20px 20px !important;
@@ -517,7 +568,7 @@ body.no-scroll {
     <!-- Card 2 -->
     <div class="service-card">
       <div class="col-md-4">
-        <img src="assets/sample-2.svg" alt="On Site Overhaul And Repair" class="service-img">
+        <img src="assets/sample-2.webp" alt="On Site Overhaul And Repair" class="service-img">
       </div>
       <div class="col-md-8 offset-md-2 ">
         <h3 class="service-heading">On Site Overhaul And Repair</h3>
@@ -528,7 +579,7 @@ body.no-scroll {
     </div>
     <div class="service-card">
       <div class="col-md-4">
-        <img src="assets/sample-3.svg" alt="On Site Overhaul And Repair" class="service-img">
+        <img src="assets/sample-3.webp" alt="On Site Overhaul And Repair" class="service-img">
       </div>
       <div class="col-md-8 offset-md-2 ">
         <h3 class="service-heading">On Site Overhaul And Repair</h3>
@@ -539,7 +590,7 @@ body.no-scroll {
     </div>
         <div class="service-card">
       <div class="col-md-4">
-        <img src="assets/sample-4.svg" alt="On Site Overhaul And Repair" class="service-img">
+        <img src="assets/sample-4.webp" alt="On Site Overhaul And Repair" class="service-img">
       </div>
       <div class="col-md-8 offset-md-2 ">
         <h3 class="service-heading">On Site Overhaul And Repair</h3>
@@ -550,7 +601,7 @@ body.no-scroll {
     </div>
         <div class="service-card">
       <div class="col-md-4">
-        <img src="assets/sample-5.svg" alt="On Site Overhaul And Repair" class="service-img">
+        <img src="assets/sample-5.webp" alt="On Site Overhaul And Repair" class="service-img">
       </div>
       <div class="col-md-8 offset-md-2 ">
         <h3 class="service-heading">On Site Overhaul And Repair</h3>
@@ -562,7 +613,7 @@ body.no-scroll {
     <!-- Card 3 -->
     <div class="service-card">
       <div class="col-md-4">
-        <img src="assets/sample-6.svg" alt="Workshop Repairs" class="service-img">
+        <img src="assets/sample-6.webp" alt="Workshop Repairs" class="service-img">
       </div>
       <div class="col-md-8 offset-md-2 ">
         <h3 class="service-heading">Workshop Repairs</h3>
@@ -1322,9 +1373,13 @@ hr {
             align-items: start;
         }
 
-        .footer-subtitle {
-            font-weight: 300;
-            font-size: 20px;
+           .footer-subtitle {
+           font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
             margin: 0 !important;
             grid-column: 1;
             grid-row: 1;

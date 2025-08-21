@@ -19,76 +19,72 @@ body, html {
   overflow-x: hidden;
 }
 
-/* Requirement bar */
-.requirement-bar {
-  background-color: #FAFAFA;
-  height: 40px;
-  display: flex;
-  align-items: center;
-}
+</style>
+</head>
+<body>
 
-.requirement-text,
+<style>
+    /* Requirement bar */
+    .requirement-bar {
+      background-color: #FAFAFA;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .requirement-text,
+    .inquire-text {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: #000;
+      margin: 0;
+    }
 .inquire-text {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 100%;
-  color: #000;
-  margin: 0;
-}
+      font-family: 'Manrope', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      color: red;
+      margin: 0;
+    }
+    .arrow-icon {
+      width: 24px;
+      height: 24px;
+    }
+ .arrow-icon2 {
+      width: 34px;
+      height: 34px;
+    }
+    /* Navbar */
+    .custom-navbar {
+      background-color: #FAFAFA;
+      height: 120px;
+      display: flex;
+      align-items: center;
+    }
 
-.arrow-icon {
-  width: 24px;
-  height: 24px;
-}
-
-.arrow-icon2 {
-  width: 34px;
-  height: 34px;
-}
-
-/* Navbar */
-.custom-navbar {
-  background-color: #FAFAFA;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid transparent;
-}
-
-/* Scrolled navbar state */
-.custom-navbar.scrolled {
-  height: 80px;
-  background-color: rgba(250, 250, 250, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(218, 46, 46, 0.1);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-.custom-navbar .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-}
-
-.custom-navbar .nav-link {
+   .custom-navbar .nav-link {
   font-family: 'Manrope', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #000;
   padding: 0;
-  margin-left: 50px;
+  margin-left: 50px; /* increased gap between links */
   position: relative;
   transition: color 0.3s ease;
-  text-decoration: none;
+}
+
+   .custom-navbar .nav-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+  padding: 0;
+  margin-left: 50px; /* more gap between links */
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .custom-navbar .nav-link:hover {
@@ -108,127 +104,140 @@ body, html {
 }
 
 .custom-navbar .nav-link:hover::after {
-  width: 30px;
+  width: 30px; /* wider dash when hovered */
 }
 
-.navbar-logo {
-  height: 100px;
-  width: 188px;
-  transition: all 0.3s ease;
-}
+    .navbar-logo {
+      height: 100px;
+      width: 188px;
+    }
 
-/* Logo changes when scrolled */
-.custom-navbar.scrolled .navbar-logo {
-  height: 60px;
-  width: 113px;
-}
+    /* Get a Quote button */
+    .quote-btn {
+      background-color: #DA2E2E;
+      color: #fff;
+      width: 126px;
+      height: 44px;
+      padding: 16px;
+      border: none;
+      
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
 
-/* Navigation list */
-.nav {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-item {
-  list-style: none;
-}
-
-/* Get a Quote button */
-.quote-btn {
-  background-color: #DA2E2E;
-  color: #fff;
-  width: 126px;
-  height: 44px;
-  padding: 16px;
-  border: none;
-  border-radius: 4px;
-  font-family: 'Manrope', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.quote-btn:hover {
-  background-color: #b32222;
-  transform: translateY(-1px);
-}
-
-/* Mobile controls */
-.mobile-controls {
-  display: none;
-}
-
-/* Desktop: show nav, hide mobile controls */
-.desktop-nav {
-  display: flex;
-}
-
-/* Mobile responsive styles */
+    .quote-btn:hover {
+      background-color: #b32222;
+    }
+    /* Mobile responsive styles */
 @media (max-width: 768px) {
-  /* Requirement Bar */
+/* Requirement Bar */
   .requirement-bar {
     width: 100%;
     max-width: 440px;
     height: 30px;
-    margin: 0 auto;
-    padding: 0 10px;
-    padding-top: 20px;
-  }
-
-  .requirement-bar .container {
-    flex-direction: row;
+    /* margin: 24px auto 0; */
+    padding: 0 8px;
+    display: flex;
     justify-content: center;
-    /* gap: 8px; */
+    align-items: center;
   }
 
   .requirement-text,
   .inquire-text {
-    font-size: 14px;
+    font-size: 9px;
+    line-height: 100%;
+    font-weight: 400;
+    text-align: center;
   }
 
   .arrow-icon {
-    width: 16px;
-    height: 16px;
+
+    margin: 0 6px;
   }
 
   /* Navbar */
   .custom-navbar {
-    width: 100%;
-    max-width: 440px;
-    height: 80px;
-    margin: 0 auto;
+    height: 70px;
+  
   }
+  .inquire-text{
+  color: red;
+}
+  .navbar-logo {
+    content: url("assets/mobile-logo.png");
 
-  .custom-navbar.scrolled {
-    height: 60px;
+            width: 60px;
+        height: auto;
   }
-
   .custom-navbar .container {
     justify-content: space-between;
     align-items: center;
-    padding: 0 12px;
   }
 
-  /* Mobile logo */
+  /* Replace logo with mobile version */
   .navbar-logo {
+    content: url('assets/mobile-logo.png');
     width: 60px;
     height: 60px;
   }
-
-  .custom-navbar.scrolled .navbar-logo {
-    width: 45px;
-    height: 45px;
+  .quote-btn {
+    width: auto;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 12px;
   }
 
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .menu-btn img {
+    width: 20px;
+    height: 20px;
+  }
   /* Hide desktop nav links */
-  .desktop-nav {
+  .custom-navbar .nav {
+    display: none;
+  }
+
+
+
+  
+}
+@media (max-width: 768px) {
+  .menu-btn {
+    border: none !important;      
+    outline: none !important;     
+    background: transparent !important; 
+    /* adjust padding for mobile */
+    width: auto !important;        /* ensures button isn’t too wide */
+    height: 40px !important;       /* proper touch-friendly height */
+    font-size: 16px !important;    /* adjust text/icon size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+    .menu-btn img {
+    width: 32px !important;  /* adjust width for mobile */
+    height: 32px !important; /* maintain aspect ratio */
+    object-fit: contain;     /* prevent stretching */
+  }
+}/* Desktop: hide mobile controls */
+.mobile-controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop nav */
+  .custom-navbar .nav {
     display: none;
   }
 
@@ -236,71 +245,14 @@ body, html {
   .mobile-controls {
     display: flex;
     align-items: center;
-    gap: 16px;
-  }
-
-  /* Get a Quote button (mobile size) */
-  .quote-btn {
-    width: 103px;
-    height: 32px;
-    padding: 8px 12px;
-    font-size: 14px;
-    border-radius: 0px;
-  }
-
-  /* Mobile menu button */
-  .menu-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-  }
-
-  .menu-btn img {
-    width: 24px;
-    height: 24px;
+    gap: 8px;
   }
 }
 
-/* Utility classes */
-.d-flex {
-  display: flex;
-}
 
-.d-none {
-  display: none;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.justify-content-between {
-  justify-content: space-between;
-}
-
-@media (min-width: 769px) {
-  .d-md-flex {
-    display: flex !important;
-  }
-  .d-md-none {
-    display: none !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .d-md-flex {
-    display: none !important;
-  }
-  .d-md-none {
-    display: flex !important;
-  }
-}
-</style>
-</head>
-<body>
-
-    <div class="requirement-bar">
+  </style>
+  <!-- Requirement Bar -->
+  <div class="requirement-bar">
     <div class="container d-flex align-items-center justify-content-center">
       <p class="requirement-text text-center text-md-start">
         Have a Requirement in Mind? Send Us Your Inquiry
@@ -309,7 +261,6 @@ body, html {
       <p class="inquire-text">Inquire Now</p>
     </div>
   </div>
-
   <!-- Navbar -->
   <!-- Navbar -->
 <nav class="custom-navbar">
@@ -357,22 +308,97 @@ body, html {
   </div>
 </nav>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
+  });
+</script>
+
+
 <style>
-/* Default mobile nav - hidden */
-.mobile-nav {
+ /* Requirement bar */
+.requirement-bar {
+  background-color: #FAFAFA;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  position: relative; /* stays normal at top initially */
+  z-index: 1500;
+}
+.custom-navbar.scrolled .navbar-logo {
+  content: url("assets/mobile-logo.png");
+        height: 60px !important;
+    width: auto !important;
+}
+/* Hidden state on scroll */
+.requirement-bar.hidden {
   display: none;
-  position: fixed;
+}
+
+/* Navbar styles */
+.custom-navbar {
+  position: relative; /* default: normal flow */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  background: white;
+  z-index: 2000;
+  transition: all 0.3s ease-in-out;
+  padding: 0.8rem 0;
+}
+
+/* Default navbar state */
+.custom-navbar .navbar-logo {
+  transition: all 0.3s ease-in-out;
+  
+}
+
+/* When sticky */
+.custom-navbar.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.custom-navbar.scrolled .navbar-logo {
+  content: url("assets/mobile-logo.png");
+        height: 80px;
+    width: 88px;
+}
+
+
+/* Default mobile nav - hidden */
+/* Default mobile nav - hidden */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%; /* start off-screen */
+  width: 100%;
+  height: 100vh;
   background-color: #d32222;
   color: #fff;
   text-align: center;
   z-index: 1000;
   padding-top: 3rem;
-  overflow: hidden; /* Prevent scrolling inside */
+  overflow: hidden;
+  transition: left 0.3s ease-in-out; /* smooth slide */
 }
+
+/* Show nav */
+.mobile-nav.active {
+  left: 0; /* slides into view */
+}
+
 
 body.no-scroll {
   height: 100vh;
@@ -391,6 +417,7 @@ body.no-scroll {
 
 .mobile-nav a {
   color: #fff;
+  font-family: 'Manrope', sans-serif;
   text-decoration: none;
   font-size: 1.5rem;
   display: block;
@@ -415,101 +442,42 @@ body.no-scroll {
 .mobile-nav.active {
   display: block;
 }
-@media (max-width: 768px) {
 
-  /* Requirement Bar */
-  .requirement-bar {
-    width: 100%;
-    max-width: 440px;
-    height: 30px;
-    margin: 24px auto 0;
-    padding: 0 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .requirement-text,
-  .inquire-text {
-    font-size: 9px;
-    line-height: 100%;
-    font-weight: 400;
-    text-align: center;
-  }
-
-  .arrow-icon {
-    width: 24px;
-    height: 24px;
-    margin: 0 6px;
-  }
-
-  /* Navbar */
-  .custom-navbar {
-    height: 70px;
-  
-  }
-.inquire-text{
-  color: red;
-}
-  .navbar-logo {
-    content: url("assets/mobile-logo.png");
-
-            width: 60px;
-        height: auto;
-  }
-
-  .custom-navbar .nav {
-    display: none; /* hide desktop nav links */
-  }
-
-  .quote-btn {
-    width: auto;
-    height: 32px;
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-
-  .mobile-controls {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .menu-btn img {
-    width: 20px;
-    height: 20px;
-  }
-
-}
 /* Disable body scrolling when menu is active */
-@media (max-width: 768px) {
-  .menu-btn {
-    border: none !important;      
-    outline: none !important;     
-    background: transparent !important; 
-    /* adjust padding for mobile */
-    width: auto !important;        /* ensures button isn’t too wide */
-    height: 40px !important;       /* proper touch-friendly height */
-    font-size: 16px !important;    /* adjust text/icon size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-    .menu-btn img {
-    width: 32px !important;  /* adjust width for mobile */
-    height: 32px !important; /* maintain aspect ratio */
-    object-fit: contain;     /* prevent stretching */
-  }
 
-
-}
-@media (max-width: 768px) {
-  html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-  }}
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".custom-navbar");
+    const requirementBar = document.querySelector(".requirement-bar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        // Hide requirement bar
+        requirementBar.classList.add("hidden");
+        // Stick navbar
+        navbar.classList.add("scrolled");
+      } else {
+        // Show requirement bar again
+        requirementBar.classList.remove("hidden");
+        // Reset navbar
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Mobile menu toggle
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
+  });
+</script>
+
+
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.querySelector(".menu-btn");
@@ -1094,7 +1062,7 @@ body.no-scroll {
 </style>
 <section class="camera-section">
   <div class="camera-left">
-    <img src="assets/camera.svg" alt="Camera" class="camera-img">
+    <img src="assets/camera.webp" alt="Camera" class="camera-img">
   </div>
 
   <div class="camera-right">
@@ -1341,6 +1309,28 @@ body.no-scroll {
 
   justify-content: center;
 }
+/* ✨ Initial hidden state */
+.help-heading,
+.help-box {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ✨ When in view */
+.help-heading.animate,
+.help-box.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add a stagger effect for boxes */
+.help-box:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.help-box:nth-child(2) {
+  transition-delay: 0.4s;
+}
 
 .help-container {
   display: flex;
@@ -1377,6 +1367,7 @@ body.no-scroll {
   flex-direction: column;
   justify-content: space-between;
   background-color: transparent;
+  transition: all 0.3s ease;
 }
 .help-box span{
     font-size: 18px;
@@ -1495,8 +1486,41 @@ body.no-scroll {
     line-height: 1.2;
   }
 }
+.help-box:hover {
+
+ 
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: #fff;
+    /* Add smooth + fast transition */
+  transition: all 0.3s ease-in-out; 
+}
+
+/* Ensure child elements also change color nicely */
+.help-box:hover .help-title span,
+.help-box:hover p {
+
+  transition: color 0.1s ease-in-out;
+}
+
 
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    // Watch heading + boxes
+    document.querySelectorAll(".help-heading, .help-box").forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
 
 <!-- ======= Custom Footer Section ======= -->
 
@@ -1770,9 +1794,13 @@ body.no-scroll {
             align-items: start;
         }
 
-        .footer-subtitle {
-            font-weight: 300;
-            font-size: 20px;
+           .footer-subtitle {
+           font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
             margin: 0 !important;
             grid-column: 1;
             grid-row: 1;

@@ -133,7 +133,7 @@
     width: 100%;
     max-width: 440px;
     height: 30px;
-    margin: 24px auto 0;
+    /* margin: 24px auto 0; */
     padding: 0 8px;
     display: flex;
     justify-content: center;
@@ -260,7 +260,7 @@
     width: 100% !important;
     height: auto !important;
     object-fit: contain !important;  /* keeps aspect ratio */
-    margin-top: 1rem !important;     /* spacing below red-block */
+    /* margin-top: 1rem !important;     */
     display: block !important;
   }
 
@@ -1076,6 +1076,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    margin-top: 20px;
   }
 
   .card-logo {
@@ -1100,31 +1101,40 @@ body {
   }
 }
 
-  .video-box {
-    background: #fff;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 0;
-  }
-  .play-btn {
-    width: 50px;
-    height: 50px;
-    background: #e53935;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .play-btn:hover {
-    background: #c62828;
-    transform: scale(1.1);
-  }
+.video-box {
+  background: #fff; /* placeholder background */
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  position: relative;
+}
+.play-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}
+
+.play-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(230, 7, 7, 0.8);
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.play-btn:hover {
+  background: rgb(163, 150, 150);
+}
+
   .play-btn svg {
     width: 20px;
     height: 20px;
@@ -1191,7 +1201,7 @@ body {
 
 }@media (max-width: 768px) {
   .contact-btn {
-                width: 120px !important;
+                width: 150px !important;
         height: 32px !important;
         padding: 2px 6px !important;
         font-size: 12px !important;
@@ -1460,6 +1470,20 @@ body {
   align-items: center;
 }
 
+.network-section .row {
+  position: relative;
+}
+
+.network-section .row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40%;              /* exact middle between left and right columns */
+  transform: translateX(-50%);
+  width: 2px;
+  background: #DA2E2E;
+}
 
 /* Map image zoom-in */
 .network-map {
@@ -1632,13 +1656,7 @@ body {
       /* max-width: 600px; */
     }
 
-    .custom-navbar {
-      flex-shrink: 0; /* Prevent navbar from shrinking */
-    }
-
-    .requirement-bar {
-      flex-shrink: 0; /* Prevent requirement bar from shrinking */
-    }
+   
     
 
 
@@ -1704,49 +1722,93 @@ body {
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero-section container-fluid">
-  <div class="row no-gutters">
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
 
-    <!-- Left Content -->
-    <div class="col-lg-6 position-relative p-0">
-      <!-- Red Block -->
-      <div class="red-block position-absolute">
-        <h2>Engineered To Touch<br>Your Life Everyday</h2>
-        <button class="know-more-btn">
-          Know More <span>→</span>
-        </button>
-      </div>
-
-      <!-- Bottom Image -->
-      <img src="assets/hero-image-1.svg" alt="Bottom Image" class="bottom-img img-fluid">
-    </div>
-
-    <!-- Right Image -->
-    <div class="col-lg-6 p-0">
-      <img src="assets/Rectangle 23.png" alt="Hero Image" class="hero-img img-fluid">
-    </div>
-
-  </div>
-</section>
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
+  });
+</script>
 
 
 <style>
-/* Default mobile nav - hidden */
-.mobile-nav {
+ /* Requirement bar */
+.requirement-bar {
+  background-color: #FAFAFA;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  position: relative; /* stays normal at top initially */
+  z-index: 1500;
+}
+
+/* Hidden state on scroll */
+.requirement-bar.hidden {
   display: none;
-  position: fixed;
+}
+
+/* Navbar styles */
+.custom-navbar {
+  position: relative; /* default: normal flow */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  background: white;
+  z-index: 2000;
+  transition: all 0.3s ease-in-out;
+  padding: 0.8rem 0;
+}
+
+/* Default navbar state */
+.custom-navbar .navbar-logo {
+  transition: all 0.3s ease-in-out;
+  
+}
+
+/* When sticky */
+.custom-navbar.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.custom-navbar.scrolled .navbar-logo {
+  content: url("assets/mobile-logo.png");
+        height: 80px;
+    width: 88px;
+}
+
+
+/* Default mobile nav - hidden */
+/* Default mobile nav - hidden */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%; /* start off-screen */
+  width: 100%;
+  height: 100vh;
   background-color: #d32222;
   color: #fff;
   text-align: center;
   z-index: 1000;
   padding-top: 3rem;
-  overflow: hidden; /* Prevent scrolling inside */
+  overflow: hidden;
+  transition: left 0.3s ease-in-out; /* smooth slide */
 }
+
+/* Show nav */
+.mobile-nav.active {
+  left: 0; /* slides into view */
+}
+
 
 body.no-scroll {
   height: 100vh;
@@ -1765,6 +1827,7 @@ body.no-scroll {
 
 .mobile-nav a {
   color: #fff;
+  font-family: 'Manrope', sans-serif;
   text-decoration: none;
   font-size: 1.5rem;
   display: block;
@@ -1795,6 +1858,24 @@ body.no-scroll {
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".custom-navbar");
+    const requirementBar = document.querySelector(".requirement-bar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        // Hide requirement bar
+        requirementBar.classList.add("hidden");
+        // Stick navbar
+        navbar.classList.add("scrolled");
+      } else {
+        // Show requirement bar again
+        requirementBar.classList.remove("hidden");
+        // Reset navbar
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Mobile menu toggle
     const menuBtn = document.querySelector(".menu-btn");
     const mobileNav = document.querySelector(".mobile-nav");
 
@@ -1805,6 +1886,44 @@ body.no-scroll {
   });
 </script>
 
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.querySelector(".menu-btn");
+    const mobileNav = document.querySelector(".mobile-nav");
+
+    menuBtn.addEventListener("click", () => {
+      mobileNav.classList.toggle("active");
+      document.body.classList.toggle("no-scroll");
+    });
+  });
+</script>
+<!-- Hero Section -->
+<section class="hero-section container-fluid">
+  <div class="row no-gutters">
+
+    <!-- Left Content -->
+    <div class="col-lg-6 position-relative p-0">
+      <!-- Red Block -->
+      <div class="red-block position-absolute">
+        <h2>Engineered To Touch<br>Your Life Everyday</h2>
+        <button class="know-more-btn">
+          Know More <span>→</span>
+        </button>
+      </div>
+
+      <!-- Bottom Image -->
+      <img src="assets/hero-image-1.svg" alt="Bottom Image" class="bottom-img img-fluid">
+    </div>
+
+    <!-- Right Image -->
+    <div class="col-lg-6 p-0">
+      <img src="assets/man-image-1.webp" alt="Hero Image" class="hero-img img-fluid">
+    </div>
+
+  </div>
+</section>
 <!-- New Section -->
 <section class="info-section">
   <div class="container d-flex">
@@ -1986,7 +2105,7 @@ body.no-scroll {
 <!-- Services Section -->
 <section class="services-section">
   <div class="services-image">
-    <img src="assets/male-worker-factory.svg" alt="Services" />
+    <img src="assets/male-worker-factory.webp" alt="Services" />
   </div>
   <div class="services-content">
       <div class="services-grid">
@@ -2082,10 +2201,39 @@ body.no-scroll {
   </div>
 </section>
 
+
 <style>
+  @media (max-width: 768px) {
+  .testimonial-right {
+    padding: 20px 10px;
+    position: relative; /* so ::before anchors here */
+  }
+
+  /* Move red line to testimonial-right */
+  .testimonial-right::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;  /* full height of container */
+    width: 4px;
+    background: #DA2E2E;
+  }
+
+  /* remove the old red line from heading */
+  .testimonial-heading::before {
+    display: none;
+  }
+  .custom-navbar.scrolled .navbar-logo{
+    width: 60px;
+    height: auto;
+  }
+    .network-section .row::before {
+    display: none;
+  }
+}
 
 </style>
-
 <script>
 (function(){
   const carousel = document.getElementById('testimonialCarousel');
@@ -2121,38 +2269,57 @@ body.no-scroll {
 })();
 </script>
 
-<style>
-
-</style>
 
 <section class="py-5" style="background:#f8f9fa;">
   <div class="container">
     <div class="row">
       <!-- Left Video -->
       <div class="col-md-6">
-        <div class="video-box">
-          <div class="play-btn">
-            <!-- SVG Play Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <div class="video-box position-relative">
+          <button class="play-btn toggle-btn">
+            <!-- Play Icon -->
+            <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#d32222">
               <path d="M8 5v14l11-7z"/>
             </svg>
-          </div>
+            <!-- Pause Icon (hidden initially) -->
+            <svg class="icon-pause d-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#d32222">
+              <path d="M6 19h4V5H6zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
         </div>
       </div>
+
       <!-- Right Video -->
       <div class="col-md-6">
-        <div class="video-box">
-          <div class="play-btn">
-            <!-- SVG Play Icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <div class="video-box position-relative">
+          <button class="play-btn toggle-btn">
+            <!-- Play Icon -->
+            <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#d32222">
               <path d="M8 5v14l11-7z"/>
             </svg>
-          </div>
+            <!-- Pause Icon (hidden initially) -->
+            <svg class="icon-pause d-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" fill="#d32222">
+              <path d="M6 19h4V5H6zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </div>
 </section>
+<script>
+  document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const playIcon = btn.querySelector(".icon-play");
+      const pauseIcon = btn.querySelector(".icon-pause");
+
+      playIcon.classList.toggle("d-none");
+      pauseIcon.classList.toggle("d-none");
+    });
+  });
+</script>
+
+
 <section class="custom-section d-flex align-items-center">
   <div class="container d-flex justify-content-between align-items-center">
     <!-- Left Text -->
@@ -2196,7 +2363,7 @@ body.no-scroll {
     <div id="productCarousel" class="product-carousel d-flex">
       <!-- Card -->
       <div class="product-card2 flex-shrink-0">
-  <img src="assets/demo-image-1.svg" class="card-img" alt="Card Image 1">
+  <img src="assets/demo-image-1.webp" class="card-img" alt="Card Image 1">
   <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
   
   
@@ -2208,7 +2375,7 @@ body.no-scroll {
 </div>
 
 <div class="product-card2 flex-shrink-0">
-  <img src="assets/demo-image-2.svg" class="card-img" alt="Card Image 2">
+  <img src="assets/demo-image-2.webp" class="card-img" alt="Card Image 2">
   <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
 
   
@@ -2218,7 +2385,7 @@ body.no-scroll {
   </div>
 </div>
 <div class="product-card2 flex-shrink-0">
-  <img src="assets/demo-image-3.svg" class="card-img" alt="Card Image 2">
+  <img src="assets/demo-image-3.webp" class="card-img" alt="Card Image 2">
   <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
 
   
@@ -2228,7 +2395,7 @@ body.no-scroll {
   </div>
 </div>
 <div class="product-card2 flex-shrink-0">
-  <img src="assets/demo-image-1.svg" class="card-img" alt="Card Image 2">
+  <img src="assets/demo-image-1.webp" class="card-img" alt="Card Image 2">
   <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
 
   
@@ -2238,7 +2405,7 @@ body.no-scroll {
   </div>
 </div>
 <div class="product-card2 flex-shrink-0">
-  <img src="assets/demo-image-3.svg" class="card-img" alt="Card Image 3">
+  <img src="assets/demo-image-3.webp" class="card-img" alt="Card Image 3">
   <h3 class="card-title2">ATEX Roots Blowers in the Petrochemical and Oil & Gas Industry</h3>
 
   
@@ -2335,6 +2502,7 @@ body.no-scroll {
 
 
 <style>
+
 @media (max-width: 768px) {
   .network-blocks {
     display: grid;
@@ -2372,6 +2540,7 @@ body.no-scroll {
     font-size: 14px;
     margin-bottom: 6px;
     padding: 0 8px; /* keeps text from touching the divider */
+    text-decoration: none;
   }
 
   .network-heading {
@@ -2690,8 +2859,12 @@ body.no-scroll {
         }
 
         .footer-subtitle {
-            font-weight: 300;
-            font-size: 20px;
+           font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
             margin: 0 !important;
             grid-column: 1;
             grid-row: 1;
