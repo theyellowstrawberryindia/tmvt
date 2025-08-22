@@ -15,6 +15,8 @@
 
 </head>
 <body>
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
 
   <!-- Requirement Bar -->
   <div class="requirement-bar">
@@ -74,8 +76,84 @@
   </div>
 </nav>
 
+<script>
+  // Custom cursor
+document.addEventListener("DOMContentLoaded", () => {
+  const cursorDot = document.querySelector(".cursor-dot");
+  const cursorOutline = document.querySelector(".cursor-outline");
+
+  let mouseX = 0, mouseY = 0;
+  let outlineX = 0, outlineY = 0;
+
+  // Mouse move tracking
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorDot.style.left = `${mouseX}px`;
+    cursorDot.style.top = `${mouseY}px`;
+  });
+
+  // Smooth follow for outline
+  function animate() {
+    outlineX += (mouseX - outlineX) * 0.15;
+    outlineY += (mouseY - outlineY) * 0.15;
+
+    cursorOutline.style.left = `${outlineX}px`;
+    cursorOutline.style.top = `${outlineY}px`;
+
+    requestAnimationFrame(animate);
+  }
+  animate();
+});
+
+</script>
+<style>
+/* --- Base cursor --- */
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: difference; /* MAGIC: auto inverts on dark/red bg */
+}
+
+/* Small dot */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: white; /* Base = white, will invert dynamically */
+  transition: transform 0.2s ease;
+}
+
+/* Outer outline */
+.cursor-outline {
+  width: 35px;
+  height: 35px;
+  border: 2px solid white;
+  transition: width 0.25s ease, height 0.25s ease, border 0.25s ease;
+}
+
+/* Hover on links */
+a:hover ~ .cursor-outline,
+button:hover ~ .cursor-outline {
+  width: 60px;
+  height: 60px;
+}
+/* Disable custom cursor on mobile */
+@media (max-width: 768px) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none !important;
+  }
+}
 
 
+</style>
 
 
 
@@ -552,11 +630,18 @@
             <!-- Top row: text + icons -->
             <div class="d-flex justify-content-between align-items-center">
                 <h2 class="footer-title">Engineered to touch your life everyday!</h2>
-                <div class="footer-icons d-flex gap-3">
-                    <img src="assets/linkedin-logo.png" alt="LinkedIn" class="footer-icon">
-                    <img src="assets/facebook-logo.png" alt="Facebook" class="footer-icon">
-                    <img src="assets/instagram-logo.png" alt="Instagram" class="footer-icon">
-                </div>
+              <div class="footer-icons d-flex gap-3">
+  <a href="https://www.linkedin.com/company/tmvt-industries/" target="_blank" rel="noopener noreferrer">
+    <img src="assets/linkedin-logo.png" alt="LinkedIn" class="footer-icon">
+  </a>
+  <a href="https://www.facebook.com/people/TMVT-Industries-Pvt-Ltd/61558224031792/?mibextid=LQQJ4d&rdid=YeO6qJfsMOrovJVn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FUeTkHKPVW71zvY1u%2F%3Fmibextid%3DLQQJ4d" target="_blank" rel="noopener noreferrer">
+    <img src="assets/facebook-logo.png" alt="Facebook" class="footer-icon">
+  </a>
+  <a href="https://www.instagram.com/tmvt.india/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#" target="_blank" rel="noopener noreferrer">
+    <img src="assets/instagram-logo.png" alt="Instagram" class="footer-icon">
+  </a>
+</div>
+
             </div>
 
             <!-- Horizontal line -->
@@ -579,16 +664,24 @@
 
                 <!-- Mobile Social Icons - moved here -->
                 <div class="footer-social-mobile">
-                    <div class="social-circle">
-                        <img src="assets/linkedin-logo.png" alt="LinkedIn">
-                    </div>
-                    <div class="social-circle">
-                        <img src="assets/facebook-logo.png" alt="Facebook">
-                    </div>
-                    <div class="social-circle">
-                        <img src="assets/instagram-logo.png" alt="Instagram">
-                    </div>
-                </div>
+  <a href="https://www.linkedin.com/company/tmvt-industries/" target="_blank" rel="noopener noreferrer">
+    <div class="social-circle">
+      <img src="assets/linkedin-logo.png" alt="LinkedIn">
+    </div>
+  </a>
+
+  <a href="https://www.facebook.com/people/TMVT-Industries-Pvt-Ltd/61558224031792/?mibextid=LQQJ4d&rdid=YeO6qJfsMOrovJVn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FUeTkHKPVW71zvY1u%2F%3Fmibextid%3DLQQJ4d" target="_blank" rel="noopener noreferrer">
+    <div class="social-circle">
+      <img src="assets/facebook-logo.png" alt="Facebook">
+    </div>
+  </a>
+
+  <a href="https://www.instagram.com/tmvt.india/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#" target="_blank" rel="noopener noreferrer">
+    <div class="social-circle">
+      <img src="assets/instagram-logo.png" alt="Instagram">
+    </div>
+  </a>
+</div>
    <hr class="footer-mobile-divider">
               
 
