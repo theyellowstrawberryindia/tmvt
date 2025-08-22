@@ -112,6 +112,34 @@
 .mobile-controls {
   display: none;
 }
+/* Mobile Nav Hidden by Default */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  /* max-width: 300px; */
+  height: 100vh;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  z-index: 2000;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Slide In */
+.mobile-nav.active {
+  left: 0;
+}
+
+/* Slide Out Animation */
+.mobile-nav.slide-out {
+  left: -100%;
+  transition: left 0.3s ease;
+}
+
 @media (max-width: 768px) {
 
   /* Requirement Bar */
@@ -1910,8 +1938,9 @@ margin-top: 64px !important;
 
 .custom-navbar.scrolled .navbar-logo {
   content: url("assets/mobile-logo.png");
-        height: 80px;
-    width: 88px;
+        height: 70px;
+        object-fit: contain;
+    width: 70px;
 }
 
 

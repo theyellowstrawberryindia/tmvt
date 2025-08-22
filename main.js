@@ -133,11 +133,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
-const menuBtn = document.querySelector('.menu-btn');
-const mobileNav = document.querySelector('.mobile-nav');
+/* ==========================
+   MOBILE NAV MENU
+   ========================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector('.menu-btn');
+  const backBtn = document.querySelector('.back-btn');
+  const mobileNav = document.querySelector('.mobile-nav');
 
-menuBtn.addEventListener('click', () => {
-  mobileNav.classList.toggle('active'); // Make sure in CSS you define .active
+  if (menuBtn && backBtn && mobileNav) {
+    // Open menu
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.add('active');
+      mobileNav.classList.remove('slide-out');
+    });
+
+    // Close menu (slide out)
+    backBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      mobileNav.classList.remove('active');
+      mobileNav.classList.add('slide-out');
+
+      // optional: hide after animation completes
+      setTimeout(() => {
+        mobileNav.classList.remove('slide-out');
+      }, 300); // match your CSS transition duration
+    });
+  }
 });
 
 
