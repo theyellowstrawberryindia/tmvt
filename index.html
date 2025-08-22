@@ -76,8 +76,8 @@
   </div>
 </nav>
 
-<script>
-  // Custom cursor
+<!-- <script>
+
 document.addEventListener("DOMContentLoaded", () => {
   const cursorDot = document.querySelector(".cursor-dot");
   const cursorOutline = document.querySelector(".cursor-outline");
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let mouseX = 0, mouseY = 0;
   let outlineX = 0, outlineY = 0;
 
-  // Mouse move tracking
+ 
   document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cursorDot.style.top = `${mouseY}px`;
   });
 
-  // Smooth follow for outline
+ 
   function animate() {
     outlineX += (mouseX - outlineX) * 0.15;
     outlineY += (mouseY - outlineY) * 0.15;
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </script>
 <style>
-/* --- Base cursor --- */
+
 .cursor-dot,
 .cursor-outline {
   position: fixed;
@@ -119,18 +119,18 @@ document.addEventListener("DOMContentLoaded", () => {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  mix-blend-mode: difference; /* MAGIC: auto inverts on dark/red bg */
+  mix-blend-mode: difference; 
 }
 
-/* Small dot */
+
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background-color: white; /* Base = white, will invert dynamically */
+  background-color: white; 
   transition: transform 0.2s ease;
 }
 
-/* Outer outline */
+
 .cursor-outline {
   width: 35px;
   height: 35px;
@@ -138,13 +138,13 @@ document.addEventListener("DOMContentLoaded", () => {
   transition: width 0.25s ease, height 0.25s ease, border 0.25s ease;
 }
 
-/* Hover on links */
+
 a:hover ~ .cursor-outline,
 button:hover ~ .cursor-outline {
   width: 60px;
   height: 60px;
 }
-/* Disable custom cursor on mobile */
+
 @media (max-width: 768px) {
   .cursor-dot,
   .cursor-outline {
@@ -153,7 +153,7 @@ button:hover ~ .cursor-outline {
 }
 
 
-</style>
+</style> -->
 
 
 
@@ -184,6 +184,42 @@ button:hover ~ .cursor-outline {
 </section>
 <!-- New Section -->
 <section class="info-section">
+  <style>
+    
+    /* Animation for Vertical Line */
+    @keyframes slideInLeft {
+      0% { transform: translateX(-20px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    /* Animation for Info Blocks */
+    @keyframes fadeInUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    /* Simple Bounce Animation for Logos */
+    @keyframes simpleBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .vertical-line {
+      width: 4px;
+      background: linear-gradient(to bottom, #da2e2e, #da2e2e);
+      animation: slideInLeft 1s ease-out forwards;
+    }
+    .info-block {
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: calc(0.2s * var(--delay));
+      transition: transform 0.3s ease;
+    }
+    .info-block:hover {
+      transform: scale(1.03);
+    }
+    .info-logo {
+      width: 64px;
+      height: 64px;
+      animation: simpleBounce 2s ease-in-out infinite;
+    }
+  </style>
   <div class="container d-flex">
     <!-- Vertical Line (no padding) -->
     <div class="vertical-line me-4"></div>
@@ -192,7 +228,7 @@ button:hover ~ .cursor-outline {
     <div class="row g-4 flex-grow-1 py-5">
       <!-- Block 1 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <div class="info-block text-center">
+        <div class="info-block text-center" style="--delay: 1">
           <img src="assets/global-image.svg" alt="Logo 1" class="info-logo mb-3">
           <h3 class="info-title">Proven in 1000+ Installations Worldwide</h3>
           <p class="info-text">Engineered for Extreme Industrial Applications</p>
@@ -200,7 +236,7 @@ button:hover ~ .cursor-outline {
       </div>
       <!-- Block 2 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <div class="info-block text-center">
+        <div class="info-block text-center" style="--delay: 2">
           <img src="assets/engineer.svg" alt="Logo 2" class="info-logo mb-3">
           <h3 class="info-title">35+ Years of Engineering Expertise</h3>
           <p class="info-text">Custom solutions for your industry.</p>
@@ -208,7 +244,7 @@ button:hover ~ .cursor-outline {
       </div>
       <!-- Block 3 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <div class="info-block text-center">
+        <div class="info-block text-center" style="--delay: 3">
           <img src="assets/three.svg" alt="Logo 3" class="info-logo mb-3">
           <h3 class="info-title">Industry-Leading Energy Efficient Machinery</h3>
           <p class="info-text">Reduce OPEX with smarter air handling</p>
@@ -216,10 +252,10 @@ button:hover ~ .cursor-outline {
       </div>
       <!-- Block 4 -->
       <div class="col-12 col-sm-6 col-lg-3">
-        <div class="info-block text-center">
+        <div class="info-block text-center" style="--delay: 4">
           <img src="assets/engineer-2.svg" alt="Logo 4" class="info-logo mb-3">
           <h3 class="info-title">24/7 Dedicated Technical Support Available</h3>
-          <p class="info-text">TMinimize downtime, maximize productivity</p>
+          <p class="info-text">Minimize downtime, maximize productivity</p>
         </div>
       </div>
     </div>
@@ -246,6 +282,9 @@ button:hover ~ .cursor-outline {
     </div>
   </div>
 </section>
+<style>
+  
+</style>
 
 <!-- CARDS -->
 <section class="card-carousel-section">
@@ -314,7 +353,9 @@ button:hover ~ .cursor-outline {
   </div>
 </section>
 
-
+<style>
+  
+</style>
 
 
 <!-- New Red Banner Section -->
