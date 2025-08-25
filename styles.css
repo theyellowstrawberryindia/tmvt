@@ -2751,7 +2751,7 @@ hr {
 
 .prod-cta-section {
   background-color: #DA2E2E;
-  height: 400px;
+  height: 300px;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -2790,6 +2790,7 @@ hr {
   text-align: center;
   padding: 1rem;
   overflow: hidden;
+  gap: 50px;
   box-sizing: border-box;
 }
 
@@ -3435,11 +3436,11 @@ hr {
 
 .rb-cta-section {
   background-color: #DA2E2E;
-  height: 300px;
+  height: 150px;
   width: 100%;
   position: relative;
   z-index: 1;
-  padding-bottom: 120px;
+  /* padding-bottom: 120px; */
 }
 
 .rb-breadcrumb {
@@ -3537,7 +3538,8 @@ html {
 }
 
 .rb-blower-description {
-  padding: 60px 0;
+  padding-bottom: 60px;
+  padding-top: 60px;
 }
 
 .rb-blower-description p {
@@ -3615,9 +3617,13 @@ html {
 @media (max-width: 768px) {
   .rb-cta-section {
     width: 440px !important;
-    height: 280px !important;
+    /* height: 280px !important; */
     opacity: 1 !important;
   }
+  .rb-blower-description {
+    padding-bottom: 60px;
+    padding-top: 160px;
+}
 
   .rb-cta-title {
     font-family: 'Manrope', sans-serif;
@@ -4462,4 +4468,263 @@ html {
     object-fit: contain !important;
     margin-top: -85px;
   }
+}
+.connect-section {
+  position: relative;
+  width: 100%;
+  height: 188px;
+  background-color: #DA2E2E;
+  display: flex;
+  align-items: center;
+  overflow: visible; /* allows image overlap */
+}
+
+.connect-section .container {
+  max-width: 1728px;
+  margin: 0 auto;
+  padding: 0 125px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left content */
+.connect-left {
+  max-width: 987px;
+}
+
+.connect-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #FAFAFA;
+  margin-bottom: 20px;
+}
+
+.connect-btn {
+  display: inline-block;
+  padding: 16px 32px;
+  background-color: #FAFAFA;
+  color: #DA2E2E;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+  background-color: #fff;
+  color: #b32222;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Right image */
+.connect-right {
+  position: absolute;
+  right: 80px;
+  top: -60px; /* overlaps only from top */
+}
+
+.connect-img {
+  width: 244px;
+  height: 249px;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .connect-section {
+    width: 440px !important;
+    height: 180px !important;
+    margin: 0 auto !important;
+    padding-right: 20px !important;
+    padding-left: 10px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .connect-section .container {
+    padding-right: 20px !important;
+    padding-left: 0px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .connect-left {
+    max-width: 50% !important;
+  }
+
+  .connect-title {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .connect-btn {
+    font-size: 12px !important;
+    padding: 8px 16px !important;
+  }
+
+  .connect-right {
+    position: relative !important;
+    right: 0 !important;
+    top: 0 !important;
+  }
+
+  .connect-img {
+    width: 164px !important;
+    height: 240px !important;
+    margin-left: 10px !important;
+    object-fit: contain !important;
+    margin-top: -58px;
+  }
+}
+/* --- Card Section --- */
+.blower-card {
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  height: 100%;
+}
+
+.blower-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.blower-card-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.blower-card-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #333333;
+}
+
+.blower-view-more {
+  color: #D92027;
+  text-decoration: none;
+   font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.blower-view-arrow {
+  width: 16px;
+  height: 16px;
+}
+
+/* Ensure all cards same height */
+.row.g-4 > .col-12 > .blower-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Responsive Grid --- */
+/* 2 per row for tablets */
+/* Tablet: 2 per row */
+@media (max-width: 992px) {
+  .row.g-4 > .col-12.col-md-6.col-lg-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+}
+
+/* Mobile: 2 per row */
+@media (max-width: 576px) {
+    .blower-card {
+        padding: 8px;        /* smaller padding */
+        gap: 5px;      
+         font-family: 'Manrope', sans-serif;      /* tighter spacing between elements */
+        height: auto;        /* adjust height automatically */
+    }
+
+    .blower-card-img {
+        height: 160px;       /* smaller image height */
+    }
+
+    /* Ensure 2 cards per row on mobile */
+    .row.g-4 > .col-12.col-md-6.col-lg-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .blower-card-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #333333;
+}
+}
+/* Make cards overlap the section above */
+.blower-grid-section {
+  position: relative;
+  z-index: 2; /* ensures cards appear above the red section */
+  margin-top: -100px; /* adjust this value to control overlap */
+  padding-bottom: 50px;
+}
+    .prod-highlight-section {
+  background-color: #DA2E2E;
+  height: 150px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 120px;
+}
+
+.prod-highlight-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+}
+
+.prod-highlight-subtext {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  margin: 0;
+}
+
+/* Adjust font size and spacing on tablets */
+@media (max-width: 992px) {
+    .rb-desc-list {
+        font-size: 17px;
+        padding-left: 15px;
+        max-width: 600px;  /* optional: restrict width on tablets */
+    }
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 576px) {
+    .rb-desc-list {
+        font-size: 16px;
+        padding-left: 10px;
+        line-height: 1.6;
+        max-width: 100%; /* take full width on mobile */
+    }
 }
