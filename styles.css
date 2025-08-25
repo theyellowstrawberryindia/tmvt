@@ -464,11 +464,11 @@ body {
 /* --- Red Section --- */
 .cta-section {
   background-color: #DA2E2E;
-  height: 400px;
+  height: 300px;
   width: 100%;
   position: relative;
   z-index: 1;
-  padding-bottom: 120px;
+  padding-bottom: 60px;
 }
 /* New Subtext */
 .card-subtext {
@@ -1378,7 +1378,7 @@ margin-top: 64px !important;
     .custom-section {
     width: 100%; /* Instead of fixed 1728px, make it responsive */
     max-width: 1728px;
-    height: 187px;
+    height: 120px;
     margin: 0 auto;
     background: #fff; /* light gray background */
     opacity: 1;
@@ -1386,7 +1386,7 @@ margin-top: 64px !important;
 
   .section-text {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 400;
       font-family: 'Manrope', sans-serif;
     line-height: 33px; /* matches height */
     max-width: 742px;
@@ -1453,14 +1453,7 @@ margin-top: 64px !important;
 }
 
   /* --- Red Section --- */
-.cta-section {
-  background-color: #DA2E2E;
-  height: 400px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  padding-bottom: 120px;
-}
+
 
 /* Product carousel section */
 .product-carousel-section {
@@ -1791,7 +1784,7 @@ margin-top: 64px !important;
  .services-header {
       background-color: #DA2E2E;
       color: white;
-      padding: 80px 0 100px;
+      padding: 40px 0 60px;
       font-family: 'Manrope', sans-serif;
       position: relative;
       z-index: 1;
@@ -2489,6 +2482,7 @@ hr {
 
             .footer-bottom-links a {
                 font-size: 10px !important;
+                
                 font-weight: 400;
             }
 
@@ -2558,6 +2552,7 @@ hr {
             margin: auto;
             padding: 40px 0;
             font-family: 'Manrope', sans-serif;
+            background-color: #FAFAFA;
         }
 
         .footer-title {
@@ -2597,8 +2592,8 @@ hr {
 
         .footer-subtitle {
            font-size: 16px;
-    font-weight: 600;
-    color: #000;
+    font-weight: 200;
+    color: #666666;
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
@@ -2693,7 +2688,7 @@ hr {
             font-size: 14px;
             font-weight: 200;
             text-decoration: none;
-            color: #000;
+            color: #666666;
         }
 
         .footer-bottom-links a:hover {
@@ -2750,12 +2745,13 @@ hr {
 }
 
 .prod-cta-section {
-  background-color: #DA2E2E;
-  height: 300px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  padding-bottom: 120px;
+    background-color: #DA2E2E;
+    height: 300px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 60px;
+    margin-top: -20px;
 }
 
 .prod-cta-title {
@@ -3323,7 +3319,7 @@ hr {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
   font-size: 14px;        /* smaller text */
-  line-height: 100%;
+  line-height: 130%;
   margin: 0;
 }
 
@@ -3454,7 +3450,7 @@ hr {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  font-weight: 500;
+  
 }
 
 .rb-breadcrumb a:hover {
@@ -3538,7 +3534,7 @@ html {
 }
 
 .rb-blower-description {
-  padding-bottom: 60px;
+  padding-bottom: 120px;
   padding-top: 60px;
 }
 
@@ -3741,17 +3737,20 @@ html {
 
 /* Typography */
 .feature-title {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  margin: 0 0 8px 0;
-  color: #333;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    margin: 0 0 8px 0;
+    padding-bottom: 10px;
+    color: #333;
 }
 
 .feature-text {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
   font-size: 16px;
+  line-height: 130%;
   margin: 0;
   color: #333;
 }
@@ -4100,7 +4099,7 @@ html {
   font-weight: 400;
   font-size: 20px;
   line-height: 1.4;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   color: #333333;
 }
 @media (max-width: 767px) {
