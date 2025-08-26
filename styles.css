@@ -4832,3 +4832,40 @@ html {
         max-width: 100%; /* take full width on mobile */
     }
 }
+
+.rb-desc-list {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  color: #333333;
+  padding-left: 20px;
+  width: 600px; /* or width: 100% for responsiveness */
+  line-height: 1.8; /* more spacing between lines */
+}
+
+.rb-desc-list li {
+  margin-bottom: 20px; /* more space between main points */
+  position: relative;
+}
+
+/* Add a subtle bullet style for main list */
+.rb-desc-list > li::marker {
+  font-size: 16px;
+  color: #333333; /* accent color for bullets */
+  font-weight: bold;
+}
+
+/* Sublist styling */
+.rb-desc-list li ul {
+  margin-top: 12px; /* more spacing above sublist */
+  padding-left: 25px;
+  list-style-type: disc;
+}
+
+.rb-desc-list li ul li {
+  margin-bottom: 12px; /* space between sub-items */
+  font-size: 16px; /* slightly smaller for sub-items */
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Optional: subtle hover highlight for readability */
