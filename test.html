@@ -1,143 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Info Section</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    /* Custom Animations */
-    @keyframes slideInLeft {
-      0% { transform: translateX(-20px); opacity: 0; }
-      100% { transform: translateX(0); opacity: 1; }
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-    @keyframes sparkle {
-      0% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(0); opacity: 0; }
-    }
-    .vertical-line {
-      width: 4px;
-      background: linear-gradient(to bottom, #3b82f6, #1e3a8a);
-      animation: slideInLeft 1s ease-out;
-    }
-    .info-block {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeIn 1s ease-out forwards;
-      animation-delay: calc(0.2s * var(--delay));
-    }
-    .info-block:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    }
-    .info-logo {
-      transition: transform 0.3s ease;
-    }
-    .info-block:hover .info-logo {
-      transform: scale(1.1);
-    }
-    .sparkle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(59, 130, 246, 0.5));
-      border-radius: 50%;
-      pointer-events: none;
-      animation: sparkle 0.6s ease-out forwards;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How it Works</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            padding: 50px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            text-align: left;
+            margin-bottom: 60px;
+        }
+        
+        .steps-container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .step-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+        
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .step-description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.5;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        
+        .progress-line {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #e9ecef;
+            z-index: 1;
+        }
+        
+        .progress-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #e74c3c 0%, #e74c3c 25%, #e74c3c 50%, #e74c3c 75%, #e74c3c 100%);
+        }
+        
+        .progress-dots {
+            position: absolute;
+            top: 31px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+        
+        .progress-dot {
+            width: 18px;
+            height: 18px;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
+                margin-bottom: 40px;
+            }
+            
+            .progress-line,
+            .progress-dots {
+                display: none;
+            }
+            
+            .section-title {
+                text-align: center;
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-       <!-- Vertical Line -->
-      <div class="vertical-line h-64 md:h-96 w-1 rounded-full mr-0 md:mr-8 mb-6 md:mb-0"></div>
-  <section class="info-section bg-gray-100 py-12">
-    <div class="container mx-auto flex flex-col md:flex-row items-center">
-   <style>
-.cursor-dot, .cursor-shadow {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
-
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background: #da2e2e;
-}
-
-.cursor-shadow {
-  width: 20px;
-  height: 20px;
-  background: rgba(218, 46, 46, 0.2);
-}
-
-
-   </style>
-<script>
-const dot = document.createElement("div");
-const shadow = document.createElement("div");
-dot.className = "cursor-dot";
-shadow.className = "cursor-shadow";
-document.body.append(dot, shadow);
-
-let mouseX = 0, mouseY = 0, shadowX = 0, shadowY = 0;
-
-document.addEventListener("mousemove", e => {
-  mouseX = e.pageX;
-  mouseY = e.pageY;
-  dot.style.left = mouseX + "px";
-  dot.style.top = mouseY + "px";
-});
-
-function animate() {
-  shadowX += (mouseX - shadowX) * 0.1;
-  shadowY += (mouseY - shadowY) * 0.1;
-  shadow.style.left = shadowX + "px";
-  shadow.style.top = shadowY + "px";
-  requestAnimationFrame(animate);
-}
-animate();
-</script>
-
-
-
-
-      <!-- Blocks Wrapper -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 flex-grow py-8">
-        <!-- Block 1 -->
-        <div class="info-block bg-white p-6 rounded-lg text-center" style="--delay: 1">
-          <img src="assets/global-image.svg" alt="Logo 1" class="info-logo w-16 h-16 mx-auto mb-4">
-          <h3 class="info-title text-xl font-bold text-gray-800 mb-2">Proven in 1000+ Installations Worldwide</h3>
-          <p class="info-text text-gray-600">Engineered for Extreme Industrial Applications</p>
+    <div class="container">
+        <h2 class="section-title">How it Works?</h2>
+        
+        <div class="steps-container">
+            <div class="progress-line"></div>
+            <div class="progress-dots">
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+            
+            <div class="step">
+                <div class="step-icon">
+                    <img src="assets/calender-image.png" alt="Step 1 Icon">
+                </div>
+                <div class="step-number">Step 1</div>
+                <div class="step-description">
+                    Submit the details of your Requirements
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-icon">
+                    <img src="assets/calender-image.png" alt="Step 2 Icon">
+                </div>
+                <div class="step-number">Step 2</div>
+                <div class="step-description">
+                    Our team will Analyze the specifications
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-icon">
+                    <img src="assets/calender-image.png" alt="Step 3 Icon">
+                </div>
+                <div class="step-number">Step 3</div>
+                <div class="step-description">
+                    We will contact you to get additional info if needed
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-icon">
+                    <img src="assets/calender-image.png" alt="Step 4 Icon">
+                </div>
+                <div class="step-number">Step 4</div>
+                <div class="step-description">
+                    Book preferred service time
+                </div>
+            </div>
         </div>
-        <!-- Block 2 -->
-        <div class="info-block bg-white p-6 rounded-lg text-center" style="--delay: 2">
-          <img src="assets/engineer.svg" alt="Logo 2" class="info-logo w-16 h-16 mx-auto mb-4">
-          <h3 class="info-title text-xl font-bold text-gray-800 mb-2">35+ Years of Engineering Expertise</h3>
-          <p class="info-text text-gray-600">Custom solutions for your industry.</p>
-        </div>
-        <!-- Block 3 -->
-        <div class="info-block bg-white p-6 rounded-lg text-center" style="--delay: 3">
-          <img src="assets/three.svg" alt="Logo 3" class="info-logo w-16 h-16 mx-auto mb-4">
-          <h3 class="info-title text-xl font-bold text-gray-800 mb-2">Industry-Leading Energy Efficient Machinery</h3>
-          <p class="info-text text-gray-600">Reduce OPEX with smarter air handling</p>
-        </div>
-        <!-- Block 4 -->
-        <div class="info-block bg-white p-6 rounded-lg text-center" style="--delay: 4">
-          <img src="assets/engineer-2.svg" alt="Logo 4" class="info-logo w-16 h-16 mx-auto mb-4">
-          <h3 class="info-title text-xl font-bold text-gray-800 mb-2">24/7 Dedicated Technical Support Available</h3>
-          <p class="info-text text-gray-600">Minimize downtime, maximize productivity</p>
-        </div>
-      </div>
     </div>
-  </section>
-
-
-
 </body>
 </html>

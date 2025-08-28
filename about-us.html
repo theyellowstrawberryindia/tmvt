@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Info</title>
+
+   <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts: Manrope -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+  <!-- Requirement Bar -->
+  <div class="requirement-bar">
+    <div class="container d-flex align-items-center justify-content-center">
+      <p class="requirement-text text-center text-md-start">
+        Have a Requirement in Mind? Send Us Your Inquiry
+      </p>
+      <img src="assets/arrow-right.svg" alt="Arrow" class="arrow-icon mx-3">
+      <p class="inquire-text">Inquire Now</p>
+    </div>
+  </div>
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="custom-navbar">
+  <div class="container d-flex align-items-center justify-content-between">
+    <!-- Logo -->
+    <a href="index.html">
+      <img src="assets/logo.svg" alt="Logo" class="navbar-logo">
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="nav ms-5 d-none d-md-flex">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+
+    <!-- Desktop "Get a Quote" button -->
+    <button class="quote-btn d-none d-md-flex">Get a Quote</button>
+
+    <!-- Mobile controls -->
+<div class="mobile-controls d-flex align-items-center d-md-none">
+  <button class="quote-btn">Get a Quote</button>
+  <button class="menu-btn">
+    <img src="assets/menu.png" alt="Menu">
+  </button>
+</div>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-nav">
+  <!-- Back button -->
+  <a href="index.html" class="back-btn d-md-none">
+    <img src="assets/arrow-left.svg" alt="Back">
+  </a>
+
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="service.html">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<section class="prod-cta-sectionnew d-flex align-items-center">
+  <div class="container">
+    <nav class="prod-breadcrumb">
+      <img src="assets/polygon.png" alt=">" class="prod-breadcrumb-icon">
+      <a href="index.html">Home</a> 
+       <img src="assets/polygon.png" alt=">" class="prod-breadcrumb-icon">
+      <a href="index.html">Our Company</a> 
+      <img src="assets/polygon.png" alt=">" class="prod-breadcrumb-icon">
+      <a href="applications.html">About Us</a>
+    </nav>
+    <div class="row align-items-center">
+      <div class="col-12 text-white">
+        <h2 class="prod-cta-title">About us</h2>
+           </div>
+    </div>
+  </div>
+</section>
+
+<section class="landscape-section">
+  <div class="content-wrapper">
+    <!-- Vision Block -->
+    <div class="content-block">
+      <div class="block-header">
+        <img src="assets/eye.png" alt="Vision Icon" class="block-icon">
+        <h2 class="block-title">Vision</h2>
+      </div>
+      <p class="block-text">
+        Benchmarking Tomorrow’s Standards<br>
+        Our strategies for growth - Set global benchmarks and remain a market leader through established applications and customized state-of-the-art solutions for high-tech industrial processes and services to meet the strong demands of both domestic and international markets. Our portfolio of products plays a role in serving every sector in the industry from construction to packaging.
+      </p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Mission Block -->
+    <div class="content-block">
+      <div class="block-header">
+        <img src="assets/target.png" alt="Mission Icon" class="block-icon">
+        <h2 class="block-title">Mission</h2>
+      </div>
+      <p class="block-text">
+        Productivity Engineered for You<br>
+        Your productivity is our business. We provide a holistic methodology that is tailor-made, top quality and cutting edge for Air and Gas handling solutions in the pumps, vacuum and blower systems to increase productivity for our customers.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+.landscape-section {
+  width: 100%;
+  height: 650px;
+  background: url('assets/landscape.jpg') no-repeat top center;
+  background-size: cover;
+}
+
+.prod-cta-sectionnew{
+    background-color: #DA2E2E;
+    height: 200px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    /* padding-bottom: 60px; */
+    margin-top: -20px;
+}
+.content-wrapper {
+  max-width: 400px;
+  margin-left: auto;  /* pushes it to the right side */
+  /* margin-right: 80px;  */
+  color: #fff;
+}
+.block-header {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* spacing between icon and title */
+  margin-bottom: 12px;
+}
+.content-block {
+  margin-bottom: 40px;
+}
+
+/* Apply only to the first content-block (Vision) */
+.content-block:first-of-type {
+  padding-top: 50px;
+}
+
+.block-icon {
+  width: 52px;
+  height: 52px;
+}
+
+.block-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0; /* remove bottom margin since we control spacing with flex */
+}
+
+.block-text {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid rgba(28, 24, 24, 1);
+  margin: 30px 0;
+}
+
+</style>
+<section class="about-section">
+  <div class="container">
+    <h2 class="about-heading">About TMVT</h2>
+    <p class="about-text">
+      The T. Maneklal group is a third - generation family owned group of companies started by Mr. T. Maneklal in 1948. TMVT, a group company was established in 1991 by Mr. Yogesh T. Maneklal in a single machine factory, TMVT today is one of India's leading and most experienced manufacturers of Twin and Three Lobe Roots Blower and Liquid Ring Vacuum Pumps which we supply to major Blue Chip Public Sector companies and Private Sector Corporates all over India and internationally.
+    </p>
+    <p class="about-text">
+      Backed by the best in the industry, we provide effective solutions to our customers by offering them specialized and tailor-made products such as Most Energy Efficient High Speed Gearless Turbo Blowers and Extremely Superior High Vacuum Systems.
+    </p>
+    <p class="about-text">
+      With numerous design features, the widest capacity range available at fiercely competitive pricing, we can certainly match the demanding air and gas handling market requirements.
+    </p>
+    <p class="about-text">
+      We provide the highest level of services, combining a talented management team with more than 50 years of experience in the blower and pump industry and a hardworking and dedicated support staff.
+    </p>
+    <p class="about-text">
+      At TMVT, we are proud of our legacy but we remain continuously focused on the future with new collaborations, partnerships, investments, facilities and employees to help us become aligned with our commitment to continuously invest in customer-centric product development and expansion to insure that our customers have the most state-of-the-art solutions.
+    </p>
+    <p class="about-text">
+      Mr. Ashutosh Maneklal, TMVT's Chairman and Managing Director, attributes the company's evolution and growth "to the hard work and commitment of our employees, the strong relationship we have with our supply chain, distributors and customers and our dedication to continuously deliver more value through our tailor made engineering solutions. Defying odds we manufacture success everyday."
+    </p>
+  </div>
+</section>
+<style>
+    .about-section {
+  padding: 80px 20px;
+  background: #f9f9f9; /* light background for contrast */
+  font-family: 'Manrope', sans-serif;
+}
+
+.about-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111;
+ 
+  margin-bottom: 40px;
+}
+
+.about-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: justify;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<section class="features-section">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-12 col-md-4">
+        <div class="feature-card">
+          <h3 class="feature-title">Tailor-Made Excellence</h3>
+          <p class="feature-text">
+            Backed by top-tier industry expertise, TMVT offers specialized solutions—from ultra-energy-efficient High-Speed Gearless Turbo Blowers to state-of-the-art High Vacuum Systems.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-md-4">
+        <div class="feature-card">
+          <h3 class="feature-title">Unmatched Range & Value</h3>
+          <p class="feature-text">
+            With advanced design features, the broadest capacity spectrum, and fiercely competitive pricing, TMVT meets even the most demanding air and gas handling needs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-md-4">
+        <div class="feature-card">
+          <h3 class="feature-title">Experience That Delivers</h3>
+          <p class="feature-text">
+            Our management team brings over 50 years of combined experience in the blower and pump industry, supported by a dedicated staff that ensures top-quality service.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+    .features-section {
+  padding: 80px 20px;
+  background: #fff;
+  font-family: 'Manrope', sans-serif;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: 100%; /* ensures equal height cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.feature-text {
+  font-size: 16px;
+  color: #444;
+  text-align: left;
+  line-height: 1.6;
+}
+
+</style>
+<section class="testimonial-section">
+    <div class="container">
+  <div class="testimonial-content">
+    <!-- Text -->
+    <div class="testimonial-text">
+      <p>
+        “TMVT’s evolution and growth stem from our employees’ dedication, 
+        our strong supply-chain and distributor partnerships, and our 
+        commitment to delivering value through tailored engineering. 
+        Defying odds we manufacture success every day.”
+      </p>
+      <h3>Mr. Ashutosh Maneklal</h3>
+      <span>Chairman & Managing Director</span>
+    </div>
+  </div>
+
+  <!-- Left Image Overlapping -->
+  <div class="testimonial-image">
+    <img src="assets/person.png" alt="Person">
+  </div>
+
+</div>
+</section>
+
+
+<div class="testimonial-arrows">
+  <button class="arrow">
+    <img src="assets/left-arrow.svg" alt="Left Arrow">
+  </button>
+  <button class="arrow">
+    <img src="assets/right-arrow.svg" alt="Right Arrow">
+  </button>
+</div>
+
+<style>
+.testimonial-section {
+  position: relative;
+  background: #DA2E2E;
+  padding: 60px 0 80px; /* extra bottom padding so arrows don't clash */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible; /* allow image to break outside */
+}
+
+.testimonial-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end; /* push text to the right */
+}
+
+.testimonial-text {
+  width: 434px;
+  height: 323px;
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 200px; /* spacing from right edge */
+}
+
+.testimonial-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.testimonial-text h3 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.testimonial-text span {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* IMAGE HALF INSIDE / HALF OUTSIDE */
+.testimonial-image {
+  position: absolute;
+  left: 0;
+  bottom: -50px; /* pushes image down to overlap into white section */
+}
+
+.testimonial-image img {
+  width: 470px;
+  height: 443px;
+  object-fit: cover;
+  display: block;
+}
+
+.testimonial-arrows {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  /* gap: 15px; */
+  justify-content: center;
+}
+
+.arrow {
+  background: white;
+  border: none;
+      padding: 0px 10px 10px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow img {
+  width: 34px;  /* adjust size as needed */
+  height: 34px;
+}
+
+.arrow:hover {
+  background: #f0f0f0;
+}
+
+
+</style>
+<section class="connect-section">
+  <div class="container">
+    <!-- Left Content -->
+    <div class="connect-left">
+      <h2 class="connect-title">
+        Looking for customized solutions? Connect with TMVT experts today.
+      </h2>
+      <a href="#" class="connect-btn">Get Personal Assistance</a>
+    </div>
+
+    <!-- Right Image -->
+    <div class="connect-right">
+      <img src="assets/client.png" alt="Client" class="connect-img">
+    </div>
+  </div>
+</section>
+
+<!-- ========== TMVT FOOTER SECTION - START ========== -->
+<section class="tmvt-footer-section">
+ 
+
+    <footer class="custom-footer">
+        <div class="container-fluid px-5">
+            <!-- Top row: text + icons -->
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="footer-title">Engineered to touch your life everyday!</h2>
+                  <div class="footer-icons d-flex gap-3">
+  <a href="https://www.linkedin.com/company/tmvt-industries/" target="_blank" rel="noopener noreferrer">
+    <img src="assets/linkedin-logo.png" alt="LinkedIn" class="footer-icon">
+  </a>
+  <a href="https://www.facebook.com/people/TMVT-Industries-Pvt-Ltd/61558224031792/?mibextid=LQQJ4d&rdid=YeO6qJfsMOrovJVn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FUeTkHKPVW71zvY1u%2F%3Fmibextid%3DLQQJ4d" target="_blank" rel="noopener noreferrer">
+    <img src="assets/facebook-logo.png" alt="Facebook" class="footer-icon">
+  </a>
+  <a href="https://www.instagram.com/tmvt.india/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#" target="_blank" rel="noopener noreferrer">
+    <img src="assets/instagram-logo.png" alt="Instagram" class="footer-icon">
+  </a>
+</div>
+            </div>
+
+            <!-- Horizontal line -->
+            <hr class="footer-line">
+
+            <!-- Middle row: Resources & Logos -->
+            <div class="d-flex justify-content-between align-items-start mt-4">
+                <!-- Left Section -->
+                <div class="footer-resources-grid">
+                    <h3 class="footer-subtitle">Resources</h3>
+                    <a href="#" class="footer-links-item">Downloads</a>
+                    <a href="#" class="footer-links-item">Blogs</a>
+                    <a href="#" class="footer-links-item">Products</a>
+                    <a href="#" class="footer-links-item">Contact Us</a>
+                    <a href="#" class="footer-links-item">Get a Quote</a>
+                </div>
+
+                <!-- Mobile divider line (hidden on desktop) -->
+                <hr class="footer-mobile-divider">
+
+                <!-- Mobile Social Icons - moved here -->
+               <div class="footer-social-mobile">
+  <a href="https://www.linkedin.com/company/tmvt-industries/" target="_blank" rel="noopener noreferrer">
+    <div class="social-circle">
+      <img src="assets/linkedin-logo.png" alt="LinkedIn">
+    </div>
+  </a>
+
+  <a href="https://www.facebook.com/people/TMVT-Industries-Pvt-Ltd/61558224031792/?mibextid=LQQJ4d&rdid=YeO6qJfsMOrovJVn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FUeTkHKPVW71zvY1u%2F%3Fmibextid%3DLQQJ4d" target="_blank" rel="noopener noreferrer">
+    <div class="social-circle">
+      <img src="assets/facebook-logo.png" alt="Facebook">
+    </div>
+  </a>
+
+  <a href="https://www.instagram.com/tmvt.india/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D#" target="_blank" rel="noopener noreferrer">
+    <div class="social-circle">
+      <img src="assets/instagram-logo.png" alt="Instagram">
+    </div>
+  </a>
+</div>
+   <hr class="footer-mobile-divider">
+              
+
+                <!-- Right Section Logos -->
+                <div class="d-flex flex-wrap gap-3 justify-content-end footer-cert-logos">
+                    <img src="assets/atex-logo.png" alt="ATEX">
+                    <img src="assets/make-in-india-logo.png" alt="Made in India">
+                    <img src="assets/bureau-logo.png" alt="Certification">
+                    <img src="assets/ce-logo.png" alt="CE">
+                </div>
+            </div>
+
+            <!-- Middle Logo with lines -->
+            <div class="footer-center-logo text-center my-4">
+                <img src="assets/footer-logo-new.png" alt="TMVT Logo">
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <!-- Left -->
+                <p class="footer-credit">
+                    ©2025 TMVT Industries Pvt. Ltd | Crafted by The Yellow Strawberry
+                </p>
+                <!-- Right -->
+                <div class="footer-bottom-links d-flex gap-4">
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Privacy Statement</a>
+                    <a href="#">Legal Terms</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<!-- ========== TMVT FOOTER SECTION - END ========== -->
+<script src="main.js"></script>
+</body>
+</html>
